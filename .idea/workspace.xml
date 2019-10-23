@@ -18,10 +18,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1SVdmcegyl5y66M2cY5xiDXVraS" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -74,7 +77,7 @@
       <updated>1571652861333</updated>
       <workItem from="1571652878210" duration="23074000" />
       <workItem from="1571795255377" duration="5909000" />
-      <workItem from="1571809968497" duration="18404000" />
+      <workItem from="1571809968497" duration="18665000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,19 @@
+{
+  "name": "tt2_node",
+  "version": "1.0.0",
+  "description": "TT2 Fissure Detector",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.js"
+  },
+  "author": "Christian Hernández",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}

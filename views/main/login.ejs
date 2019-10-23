@@ -1,0 +1,147 @@
+<%- include('../includes/head.ejs')%>
+<body>
+<!--Header section-->
+<%- include('../includes/header.ejs')%>
+
+
+<!--Form section-->
+
+<section class="form-container">
+    <div class="container-fluid">
+        <h2>Ingreso</h2>
+        <br>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#login">Ingresar</a>
+            </li>
+            <li class="nav-item" id="registro">
+                <a class="nav-link" data-toggle="tab" href="#sign-up">Registro</a>
+            </li>
+            <li class="nav-item" id="recuperar">
+                <a class="nav-link" data-toggle="tab" href="#recover-pass">Recuperar contraseña</a>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <!-- Ingresar -->
+            <div id="login" class="container-fluid tab-pane active"><br>
+                <h3>Ingresar</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="valid-email">Correo</label>
+                        <input type="email" class="form-control" id="valid-email" placeholder="Ingresar correo">
+                    </div>
+                    <div class="form-group">
+                        <label for="valid-password">Contraseña</label>
+                        <input type="password" class="form-control" id="valid-password" placeholder="Ingresar contraseña">
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="session-open">
+                        <label class="form-check-label" for="session-open">Mantener sesión</label>
+                    </div>
+                    <div class="btn-container">
+                        <a href="../main_menu/main-menu" class="btn btn-form">Enviar</a>
+                    </div>
+                </form>
+            </div>
+            <!-- Fin ingresar -->
+
+            <!-- Registro -->
+            <div id="sign-up" class="container-fluid tab-pane fade"><br>
+                <h3>Registro</h3>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="input-name">Nombre(s)</label>
+                            <input type="text" class="form-control" id="input-name" placeholder="Nombre(s)">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="input-surname1">Apellido paterno</label>
+                            <input type="text" class="form-control" id="input-surname1" placeholder="Apellido paterno">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="input-surname2">Apellido paterno</label>
+                            <input type="text" class="form-control" id="input-surname2" placeholder="Apellido materno">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="input-email">Correo</label>
+                            <input type="email" class="form-control" id="input-email" placeholder="Correo">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="input-cedula">Cédula profesional</label>
+                            <input type="text" class="form-control" id="input-cedula" placeholder="Cédula profesional">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="input-password1">Contraseña</label>
+                            <input type="text" class="form-control" id="input-password1" placeholder="Al menos 8 dígitos">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="input-password2">Repetir contraseña</label>
+                            <input type="text" class="form-control" id="input-password2" placeholder="Repetir contraseña">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6 dropdown-form">
+                            <label for="input-dro">Tipo de DRO</label>
+                            <select id="input-dro" class="form-control">
+                                <option selected>Elegir</option>
+                                <option>Opción 1</option>
+                                <option>Opción 2</option>
+                                <option>Opción 3</option>
+                                <option>Opción 4</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 dropdown-form">
+                            <label for="input-situation">Situación</label>
+                            <select id="input-situation" class="form-control">
+                                <option selected>Elegir</option>
+                                <option>Opción 1</option>
+                                <option>Opción 2</option>
+                                <option>Opción 3</option>
+                                <option>Opción 4</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="accept-terms">
+                            <label class="form-check-label" for="accept-terms">
+                                Aceptar terminos y condiciones
+                            </label>
+                        </div>
+                    </div>
+                    <div class="btn-container">
+                        <a href="../register/register-summary" class="btn btn-form">Registrar</a>
+                    </div>
+                </form>
+            </div>
+            <!-- Fin registro -->
+
+            <!-- Recuperar contraseña -->
+            <div id="recover-pass" class="container-fluid tab-pane fade"><br>
+                <h3>Recuperar contraseña</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="email-recover">Correo registrado</label>
+                        <input type="email" class="form-control" id="email-recover" aria-describedby="emailHelp" placeholder="Ingresar correo registrado">
+                        <small id="emailHelp" class="form-text text-muted">Se enviará un enlace para recuperar contraseña al correo ingresado</small>
+                    </div>
+                    <div class="btn-container">
+                        <a href="../register/password" class="btn btn-form">Enviar correo</a>
+                    </div>
+                </form>
+            </div>
+            <!-- Fin recuperar contraseña -->
+        </div>
+    </div>
+</section>
+
+<!--Footer section-->
+<%- include('../includes/footer.ejs')%>

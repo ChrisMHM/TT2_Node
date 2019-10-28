@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="faec9ce4-87af-4202-ac58-2ec19fc745db" name="Default Changelist" comment="" />
+    <list default="true" id="faec9ce4-87af-4202-ac58-2ec19fc745db" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/views/account/account-menu.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/account/change-email.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/account/change-name.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/account/change-password.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/change_report/change-success.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/change_report/finish-validation.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/change_report/select-final-report.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/fill_report/finish-validation.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/fill_report/summary-validation.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/fill_report/validate-report.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/includes/finish-validation.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/includes/report-completed.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/includes/report-list.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/account.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/change_report.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/change_report.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/fill_report.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/fill_report.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/change_report/change-menu.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/change_report/change-menu.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/fill_report/report-completed.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/fill_report/report-completed.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/fill_report/report-form.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/fill_report/report-form.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/fill_report/report-menu.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/fill_report/report-menu.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/fill_report/summary-form.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/fill_report/summary-form.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/includes/header-main-menu.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/includes/header-main-menu.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/includes/summary-form.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/includes/summary-form.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/main/contact.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/main/contact.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/main_menu/main-menu.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/main_menu/main-menu.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/upload_images/images-sent.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/upload_images/images-sent.ejs" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,19 +51,29 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\milkm\Documents\GitHub\TT2_Node\.idea" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1SVdmcegyl5y66M2cY5xiDXVraS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\milkm\Documents\GitHub\TT2_Node\views" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\milkm\Documents\GitHub\TT2_Node\public\img" />
       <recent name="C:\Users\milkm\Documents\GitHub\TT2_Node\public" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\milkm\Documents\GitHub\TT2_Node\views" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -77,11 +117,25 @@
       <updated>1571652861333</updated>
       <workItem from="1571652878210" duration="23074000" />
       <workItem from="1571795255377" duration="5909000" />
-      <workItem from="1571809968497" duration="18665000" />
+      <workItem from="1571809968497" duration="31681000" />
+      <workItem from="1572105109234" duration="45482000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

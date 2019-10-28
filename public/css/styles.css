@@ -1,6 +1,7 @@
 *{
     --black-transparnt-bg: rgba(0,0,0,0.4);
     --background-color: linear-gradient(135deg, rgba(40,15,52,1) 0%, rgba(40,15,52,1) 50%, rgba(228,22,84,1) 100%);
+    --background-color-2: linear-gradient(135deg, rgba(0, 63, 92, 1) 0%, rgba(0, 63, 92, 1) 50%, rgba(88, 80, 141, 1) 100%);
     --background-cards: rgba(179,7,83,0.8);
     --footer-background-color: linear-gradient(to bottom, rgba(191,249,237,1) 0%, rgba(136,189,187,1) 100%);
     --icons-color: rgba(179,7,83,1);
@@ -13,6 +14,7 @@
     --anchor-hover-color: rgba(191,249,237,1);
     --white-text: #f7f7f7;
     --btn-color: rgba(0, 204, 126, 1);
+    --btn-color-2: rgba(137, 137, 137, 1);
     --btn-color-hover: rgba(0, 158, 97, 1);
     --box-shadow-color: rgba(0,0,0,0.5);
 }
@@ -30,7 +32,18 @@ h4,
 h5{
     font-family: 'Roboto Slab', serif;
     font-weight: bold;
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
 }
+
+h1 {
+    font-size: 2rem;
+}
+
+h2{
+    font-size: 1.5rem;
+}
+
 
 a{
     color: var(--anchor-color);
@@ -56,6 +69,11 @@ a{
 
 .header{
     background: var(--background-color);
+    box-shadow: 0 2px 10px var(--box-shadow-color);
+}
+
+.header-main-menu{
+    background: var(--background-color-2);
     box-shadow: 0 2px 10px var(--box-shadow-color);
 }
 
@@ -179,9 +197,9 @@ a{
     border: 1px solid var(--border-color);
 }
 
-.frame-form h3{
-    padding-bottom: 3rem;
-}
+/*.frame-form h3{*/
+/*    padding-bottom: 3rem;*/
+/*}*/
 
 /*Buttons forms styles*/
 
@@ -207,6 +225,25 @@ a{
     margin: 2rem 0;
 }
 
+/*Botones desactivados*/
+.btn-form-disabled{
+    border-radius: 0;
+    background-color: var(--btn-color-2);
+    color: var(--white-text);
+    padding: 8px 20px;
+    box-shadow: 2px 2px 3px var(--box-shadow-color);
+}
+
+.btn-form-disabled:active{
+    color: var(--white-text);
+    box-shadow: 0 0 3px var(--box-shadow-color);
+}
+
+
+ul .list-group-item{
+    padding: 0;
+}
+
 /*Dropleft buttons */
 
 .dropdown-toggle{
@@ -214,7 +251,7 @@ a{
 }
 
 .card{
-    margin: 5% auto;
+    margin: 5% 1.5rem;
     box-shadow: 1px 1px 3px var(--box-shadow-color);
     border: none;
 }
@@ -286,7 +323,6 @@ a{
 
 
 .bold-text{
-    color: var(--footer-background-color);
     font-weight: bold;
 }
 
@@ -342,8 +378,8 @@ form .row{
 
 .notfound .notfound-bg {
     position: absolute;
-    left: 0px;
-    right: 0px;
+    left: 0;
+    right: 0;
     top: 50%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
@@ -412,6 +448,20 @@ form .row{
 .link-report:hover {
      color: var(--link-report-hover-color);
  }
+
+/*Dictamen final*/
+.selected {
+    font-weight: bold;
+}
+
+/*Custom select*/
+.dictamen-final{
+    padding-bottom: 1.5rem;
+}
+
+.max-width{
+    max-width: 500px;
+}
 
 @media only screen and (max-width: 767px) {
     .notfound .notfound-bg {

@@ -1,0 +1,27 @@
+<!--Section-->
+<section class="form-container">
+    <div class="frame-form"><br>
+        <h2>¡Reporte <%= reportInfo%>!</h2>
+        <p>El reporte ha sido <%= reportInfo%> y subido a la plataforma correctamente.</p>
+        <h3>Resultado <%= tituloDictamen%></h3>
+        <div class="list-group">
+            <p><span class="bold-text"><%= dictamen%>: </span>Edificación y/o Área Insegura. Riesgo Alto</p>
+            <div class="input-group dictamen-final">
+                <select class="custom-select" id="validacionReporte">
+                    <option selected>Validar</option>
+                    <option value="1">Edificación y/o Área Segura. Riesgo Bajo</option>
+                    <option value="2">Edificación y/o Área Insegura. Riesgo Alto</option>
+                    <option value="3">Seguridad Incierta</option>
+                </select>
+                <div class="col-sm-6 input-group-append">
+                    <button class="btn btn-outline-secondary" type="button">Enviar dictamen final</button>
+                </div>
+            </div>
+        </div>
+        <div class="row btn-container">
+            <div class="col-lg-12">
+                <a href="../main_menu/main-menu" class="btn btn-form">Ir al menú principal</a>
+            </div>
+        </div>
+    </div>
+</section>

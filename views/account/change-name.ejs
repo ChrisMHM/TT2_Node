@@ -1,0 +1,27 @@
+<%- include('../includes/head.ejs') %>
+<body>
+<!--Header section-->
+<%- include('../includes/header-main-menu.ejs') %>
+
+<!--    Section imagenes-->
+<section class="form-container">
+    <div class="container-fluid frame-form">
+        <h2>Cambiar mi nombre</h2>
+        <form action="" class="max-width container">
+            <div class="form-row">
+                <div class="form-group col-lg-12">
+                    <label for="idNuevoNombre">Nombre</label>
+                    <input type="text" value="Christian Hernández" class="form-control" id="idNuevoNombre">
+                </div>
+            </div>
+            <div class="row btn-container">
+                <div class="col-md-6 col-6">
+                    <a href="./account-menu" class="btn btn-form">Regresar</a>
+                </div>
+                <div class="col-md-6 col-6">
+                    <button class="btn btn-form" type="submit">Guardar cambios</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

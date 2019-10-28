@@ -1,0 +1,51 @@
+<%- include('../includes/head.ejs') %>
+<body>
+<!--Header section-->
+<%- include('../includes/header-main-menu.ejs') %>
+
+<section class="form-container">
+    <div class=" table-responsive">
+        <table class="table table-hover table-striped">
+            <tr>
+                <th scope="row">Nombre</th>
+                <td>Christian Hernández</td>
+                <td><a href="./change-name" class="btn btn-form">Editar</a></td>
+            </tr>
+            <tr>
+                <th scope="row">Correo</th>
+                <td>correo@correo.com</td>
+                <td><a href="./change-email" class="btn btn-form">Editar</a></td>
+            </tr>
+            <tr>
+                <th scope="row">Contraseña</th>
+                <td>********</td>
+                <td><a href="./change-password" class="btn btn-form">Editar</a></td>
+            </tr>
+            <tr>
+                <th scope="row">Cédula profesional</th>
+                <td>12345678</td>
+                <td><a href="#" class="btn btn-form-disabled disabled" aria-disabled="true">Editar</a></td>
+            </tr>
+            <tr>
+                <th scope="row">Tipo de DRO</th>
+                <td>DRO</td>
+                <td><a href="#" class="btn btn-form-disabled disabled" aria-disabled="true">Editar</a></td>
+            </tr>
+            <tr>
+                <th scope="row">Situación</th>
+                <td>Activo</td>
+                <td><a href="#" class="btn btn-form-disabled disabled" aria-disabled="true">Editar</a></td>
+            </tr>
+            <tr>
+                <th scope="row">Estatus de verificación</th>
+                <td>Verificado</td>
+                <td><a href="#" class="btn btn-form-disabled disabled" aria-disabled="true">Editar</a></td>
+            </tr>
+        </table>
+    </div>
+    <div class="row btn-container">
+        <div class="col-12">
+            <a href="../main_menu/main-menu" class="btn btn-form">Regresar</a>
+        </div>
+    </div>
+</section>

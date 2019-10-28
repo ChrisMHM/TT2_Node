@@ -8,6 +8,7 @@ const rutasMainMenu = require('./routes/main_menu');
 const rutasSubirImagenes = require('./routes/upload_images');
 const rutasLlenarReporte = require('./routes/fill_report');
 const rutasCambiarReporte = require('./routes/change_report');
+const rutasCuenta = require('./routes/account');
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use('/main_menu', rutasMainMenu);
 app.use('/upload_images', rutasSubirImagenes);
 app.use('/fill_report', rutasLlenarReporte);
 app.use('/change_report', rutasCambiarReporte);
+app.use('/account', rutasCuenta);
 app.use(rutasIndex);
 
 // Error 404

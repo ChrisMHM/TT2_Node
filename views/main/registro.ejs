@@ -1,0 +1,89 @@
+<%- include('../includes/head.ejs') %>
+<body>
+<!--Header section-->
+<%- include('../includes/header.ejs') %>
+
+
+<!--Form section-->
+
+<section class="form-container">
+    <h2>Registro</h2>
+    <div class="container-fluid frame-form">
+        <!-- Registro -->
+        <div id="form-registro" class="container-fluid "><br>
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="input-name">Nombre(s)</label>
+                        <input type="text" class="form-control" id="input-name" placeholder="Nombre(s)">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="input-surname1">Apellido paterno</label>
+                        <input type="text" class="form-control" id="input-surname1" placeholder="Apellido paterno">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="input-surname2">Apellido paterno</label>
+                        <input type="text" class="form-control" id="input-surname2" placeholder="Apellido materno">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="input-email">Correo</label>
+                        <input type="email" class="form-control" id="input-email" placeholder="Correo">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="input-cedula">Cédula profesional</label>
+                        <input type="text" class="form-control" id="input-cedula" placeholder="Cédula profesional">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="input-password1">Contraseña</label>
+                        <input type="text" class="form-control" id="input-password1" placeholder="Al menos 8 dígitos">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="input-password2">Repetir contraseña</label>
+                        <input type="text" class="form-control" id="input-password2" placeholder="Repetir contraseña">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4 dropdown-form">
+                        <label for="input-dro">Tipo de DRO</label>
+                        <select id="input-dro" class="form-control">
+                            <option value="0" selected>Elegir</option>
+                            <option value="1">PREY</option>
+                            <option value="2">DRO</option>
+                            <option value="3">CSE</option>
+                            <option value="4">PDU</option>
+                            <option value="5">CI</option>
+                            <option value="6">CDUYA</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4 dropdown-form">
+                        <label for="input-situation">Situación</label>
+                        <select id="input-situation" class="form-control">
+                            <option value="0" selected>Elegir</option>
+                            <option value="1">Vigente</option>
+                            <option value="2">No vigente</option>
+                            <option value="3">Sancionado</option>
+                            <option value="4">Cancelado</option>
+                            <option value="5">Finado</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4 dropdown-form">
+                        <label for="input-num-dro">Número de DRO</label>
+                        <input type="text" id="input-num-dro" maxlength="6" class="form-control">
+                    </div>
+
+                </div>
+                <div class="btn-container">
+                    <a href="../register/register-summary" class="btn btn-form">Registrar</a>
+                </div>
+            </form>
+        </div>
+        <!-- Fin registro -->
+    </div>
+</section>
+
+<!--Footer section-->
+<%- include('../includes/footer.ejs') %>

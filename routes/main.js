@@ -9,17 +9,17 @@ router.get('/about', (request, response) => {
     });
 });
 
-router.get('/contact', (request, response) => {
-    response.render('main/contact', {
-        pageTitle: 'Contacto',
-        path: '/main/contact'
-    });
-});
-
 router.get('/login', (request, response) => {
     response.render('main/login', {
         pageTitle: 'Ingresar',
         path: '/main/login'
+    });
+});
+
+router.get('/registro', (request, response) => {
+    response.render('main/registro', {
+        pageTitle: 'Registro',
+        path: '/main/registro'
     });
 });
 

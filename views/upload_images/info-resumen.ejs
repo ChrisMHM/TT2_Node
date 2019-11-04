@@ -1,0 +1,48 @@
+<%- include('../includes/head.ejs')%>
+<body>
+<!--Header section-->
+<%- include('../includes/header-main-menu.ejs')%>
+
+<section class="form-container">
+    <div class="container-fluid frame-form">
+        <h2>Resumen de datos de la edificación</h2>
+        <form>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <p><span class="datos-imagenes">Nombre del DRO:</span> ApellidoPa ApellidoMa Nombre(s)</p>
+                </div>
+                <div class="form-group col-md-12">
+                    <p><span class="datos-imagenes">Dirección del edificio:</span> Calle #Num, Colonia, Alcaldía,
+                        Ciudad, CP</p>
+                </div>
+            </div>
+            <h3>Áreas</h3>
+            <div class="row">
+                <div class="form-group col-6 col-md-12">
+                    <p><span class="datos-imagenes">Nombre del área:</span> Área 1</p>
+                </div>
+                <div class="form-group col-6 col-md-12">
+                    <p><span class="datos-imagenes">Tipo de estructura:</span> Muro</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-6 col-md-12">
+                    <p><span class="datos-imagenes">Nombre del área:</span> Área 2</p>
+                </div>
+                <div class="form-group col-6 col-md-12">
+                    <p><span class="datos-imagenes">Tipo de estructura:</span> Pilar o columna</p>
+                </div>
+            </div>
+
+            <div class="row btn-container">
+                <div class="col-md-6 col-6">
+                    <a href="./info-areas" class="btn btn-form">Regresar</a>
+                </div>
+                <div class="col-md-6 col-6">
+                    <a href="./info-registro" class="btn btn-form">Aceptar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

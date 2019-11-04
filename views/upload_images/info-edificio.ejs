@@ -1,0 +1,74 @@
+<%- include('../includes/head.ejs') %>
+<body>
+<!--Header section-->
+<%- include('../includes/header-main-menu.ejs') %>
+
+<!--    Section-->
+<section class="form-container">
+    <div class="container-fluid frame-form">
+        <h2>Analizar edificación</h2>
+        <!--        Inicio form-->
+        <form>
+            <h3>Dirección de la edificación</h3>
+            <div class="row">
+                <div class="form-group col-lg-12">
+                    <label for="inputAddress">Dirección</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="Mirasol, 10">
+                </div>
+                <div class="form-group col-lg-6">
+                    <label for="colonia">Colonia</label>
+                    <input type="text" class="form-control" id="colonia" placeholder="Las Flores">
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label for="inputAddress2">Alcaldía</label>
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="Xochimilco">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-9">
+                    <label for="inputCity">Ciudad</label>
+                    <input type="text" class="form-control" id="inputCity" placeholder="Ciudad de México">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="inputZip">Zip</label>
+                    <input type="text" class="form-control" id="inputZip" placeholder="56530">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label for="input-num-areas">Número de áreas de la edificación a analizar</label>
+                    <input type="number" min="1" value="1" class="form-control" id="input-num-areas">
+                </div>
+                <div class="form-group col-lg-6">
+                    <label for="inputEdificacion">Uso del inmueble</label>
+                    <select id="inputEdificacion" class="form-control">
+                        <option value="0" selected>Elegir</option>
+                        <option value="1">Casa habitación</option>
+                        <option value="2">Oficinas privadas</option>
+                        <option value="3">Educación</option>
+                        <option value="4">Departamentos</option>
+                        <option value="5">Industrias</option>
+                        <option value="6">Recreativo</option>
+                        <option value="7">Comercios</option>
+                        <option value="8">Estacionamiento</option>
+                        <option value="9">Centro de reunión</option>
+                        <option value="10">Oficinas públicas</option>
+                        <option value="11">Bodegas</option>
+                    </select>
+                </div>
+            </div>
+
+        </form>
+
+        <div class="row btn-container">
+            <div class="col-md-6 col-6">
+                <a href="../main_menu/main-menu" class="btn btn-form">Regresar</a>
+            </div>
+            <div class="col-md-6 col-6">
+                <a href="./info-areas" class="btn btn-form">Siguiente</a>
+            </div>
+        </div>
+        <!--        Fin form-->
+    </div>
+</section>

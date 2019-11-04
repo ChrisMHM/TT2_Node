@@ -30,4 +30,32 @@ router.get('/images-sent', (request, response) => {
     });
 });
 
+router.get('/info-edificio', (request, response) => {
+    response.render('upload_images/info-edificio', {
+        pageTitle: 'Analizar edificio',
+        path: '/upload_images/info-edificio'
+    });
+});
+
+router.get('/info-areas', (request, response) => {
+    response.render('upload_images/info-areas', {
+        pageTitle: 'Información áreas edificio',
+        path: '/upload_images/info-areas'
+    });
+});
+
+router.get('/info-resumen', (request, response) => {
+    response.render('upload_images/info-resumen', {
+        pageTitle: 'Resumen de la información',
+        path: '/upload_images/info-resumen'
+    });
+});
+
+router.get('/info-registro', (request, response) => {
+    response.render('upload_images/info-registro', {
+        pageTitle: 'Resumen de la información',
+        path: '/upload_images/info-registro'
+    });
+});
+
 module.exports = router;

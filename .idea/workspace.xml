@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="faec9ce4-87af-4202-ac58-2ec19fc745db" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/views/main/registro.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/main.js" afterDir="false" />
@@ -10,6 +11,9 @@
       <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/main/contact.ejs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/views/main/login.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/main/login.ejs" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> 49ceef91d04e9f63425ad6a22d2ad8489a53fe8d
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,16 +47,16 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/00-starting-setup/00-starting-setup" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\milkm\Documents\GitHub\TT2_Node\views" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\milkm\Documents\GitHub\TT2_Node\public\img" />
       <recent name="C:\Users\milkm\Documents\GitHub\TT2_Node\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\milkm\Documents\GitHub\TT2_Node\views" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -97,8 +101,13 @@
       <workItem from="1571652878210" duration="23074000" />
       <workItem from="1571795255377" duration="5909000" />
       <workItem from="1571809968497" duration="31681000" />
+<<<<<<< HEAD
       <workItem from="1572105109234" duration="45573000" />
       <workItem from="1572384482012" duration="5490000" />
+=======
+      <workItem from="1572105109234" duration="45482000" />
+      <workItem from="1572237095255" duration="3217000" />
+>>>>>>> 49ceef91d04e9f63425ad6a22d2ad8489a53fe8d
     </task>
     <servers />
   </component>

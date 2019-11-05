@@ -1,0 +1,62 @@
+<section class="form-container">
+    <h2>Seleccionar edificación para <%= selectTitle%> formulario</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">No. de Ticket</th>
+                <th scope="col">Fecha de alta</th>
+                <th scope="col">Última edición</th>
+                <th scope="col">Uso del inmueble</th>
+                <th scope="col">Calle y número</th>
+                <th scope="col">Colonia</th>
+                <th scope="col">Alcaldía</th>
+                <th scope="col">C.P.</th>
+                <th scope="col">Llenar formulario</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td scope="row">1</td>
+                <td>04/10/2019</td>
+                <td>Sin editar</td>
+                <td>Casa habitación</td>
+                <td>Las Flores, 10</td>
+                <td>Jardines</td>
+                <td>Cuajimalpa</td>
+                <td>20123</td>
+                <td><a href="<%= enlaceSiguiente%>" class="btn btn-form">Llenar</a></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>03/10/2019</td>
+                <td>06/10/2019</td>
+                <td>Educación</td>
+                <td>Mirasol, 3</td>
+                <td>Naciones</td>
+                <td>Gustavo A. Madero</td>
+                <td>23221</td>
+                <td><a href="<%= enlaceSiguiente%>" class="btn btn-form">Llenar</a></td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>03/10/2019</td>
+                <td>03/10/2019</td>
+                <td>Departamentos</td>
+                <td>Miguel Hidalgo, 32</td>
+                <td>Los Héroes</td>
+                <td>Iztacalco</td>
+                <td>02587</td>
+                <td><a href="<%= enlaceSiguiente%>" class="btn btn-form">Llenar</a></td>
+            </tr>
+
+            </tbody>
+        </table>
+
+        <div class="row btn-container">
+            <div class="col-12">
+                <a href="<%= regresar%>" class="btn btn-form">Regresar</a>
+            </div>
+        </div>
+    </div>
+</section>

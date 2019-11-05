@@ -44,12 +44,12 @@ h2{
     font-size: 1.5rem;
 }
 
-h3{
-    color: #555;
-}
-
 a{
     color: var(--anchor-color);
+}
+
+a:hover{
+    color: var(--anchor-hover-color);
 }
 
 /*General styles*/
@@ -138,6 +138,7 @@ a{
 .about article:nth-of-type(odd) {
     background: var(--background-cards);
 }
+
 
 .img-fluid{
     fill: var(--white-text);

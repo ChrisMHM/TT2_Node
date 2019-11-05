@@ -54,6 +54,26 @@ router.get('/validate-report', (request, response) => {
     });
 });
 
+router.get('/seleccionar-edificacion', (request, response) => {
+    response.render('fill_report/seleccionar-edificacion', {
+        pageTitle: 'Seleccionar edificación',
+        selectTitle: 'llenar',
+        enlaceSiguiente: './report-form',
+        regresar: './report-menu',
+        path: 'fill_report/seleccionar-edificacion'
+    });
+});
+
+router.get('/seleccionar-edificacion-continuar', (request, response) => {
+    response.render('fill_report/seleccionar-edificacion-continuar', {
+        pageTitle: 'Seleccionar edificación',
+        selectTitle: 'continuar',
+        enlaceSiguiente: './continue-report',
+        regresar: './report-menu',
+        path: 'fill_report/seleccionar-edificacion-continuar'
+    });
+});
+
 router.get('/summary-validation', (request, response) => {
     response.render('fill_report/summary-validation', {
         pageTitle: 'Resumen del reporte',

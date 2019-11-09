@@ -1,14 +1,8 @@
 const express = require('express');
+const indexControllers = require('../controllers/indexControllers');
 
 const router = express.Router();
 
-
-router.get('/', (request, response) => {
-    // Se indica la ruta que se va a renderizar y los datos que se están regresando para manejarlos dinámicamente
-    response.render('index', {
-        pageTitle: 'Inicio',
-        path: '/'
-    });
-});
+router.get('/', indexControllers.index);
 
 module.exports = router;

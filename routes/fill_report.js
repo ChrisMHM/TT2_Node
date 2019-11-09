@@ -1,96 +1,26 @@
 const express = require('express');
-
+const fillReportControllers = require('../controllers/fillReportControllers');
 const router = express.Router();
 
-router.get('/report-menu', (request, response) => {
-    response.render('fill_report/report-menu', {
-        pageTitle: 'Llenar reporte',
-        path: 'fill_report/report-menu'
-    });
-});
+router.get('/report-menu', fillReportControllers.menuReporte);
 
-router.get('/report-form', (request, response) => {
-    response.render('fill_report/report-form', {
-        pageTitle: 'Llenar formulario',
-        path: 'fill_report/report-form'
-    });
-});
+router.get('/report-form', fillReportControllers.formularioReporte);
 
-router.get('/continue-report', (request, response) => {
-    response.render('fill_report/continue-report', {
-        pageTitle: 'Continuar llenado formulario',
-        formTitle: 'Continuar Reporte',
-        salir: './report-menu',
-        enviar: './summary-form',
-        path: 'fill_report/continue-report'
-    });
-});
+router.get('/continue-report', fillReportControllers.continuarReporte);
 
-router.get('/summary-form', (request, response) => {
-    response.render('fill_report/summary-form', {
-        pageTitle: 'Resumen del reporte',
-        regresar: './report-form',
-        aceptar: './report-completed',
-        path: 'fill_report/summary-form'
-    });
-});
+router.get('/summary-form', fillReportControllers.resumenFormulario);
 
-router.get('/report-completed', (request, response) => {
-    response.render('fill_report/report-completed', {
-        pageTitle: 'Reporte enviado',
-        reportInfo: 'completado',
-        tituloDictamen: 'preliminar',
-        dictamen: 'Dictamen',
-        path: 'fill_report/report-completed'
-    });
-});
+router.get('/report-completed', fillReportControllers.reporteCompletado);
 
-router.get('/validate-report', (request, response) => {
-    response.render('fill_report/validate-report', {
-        pageTitle: 'Seleccionar dictamen',
-        selectTitle: 'validar',
-        regresar: './report-menu',
-        path: 'fill_report/validate-report'
-    });
-});
+router.get('/validate-report', fillReportControllers.validarReporte);
 
-router.get('/seleccionar-edificacion', (request, response) => {
-    response.render('fill_report/seleccionar-edificacion', {
-        pageTitle: 'Seleccionar edificación',
-        selectTitle: 'llenar',
-        enlaceSiguiente: './report-form',
-        regresar: './report-menu',
-        path: 'fill_report/seleccionar-edificacion'
-    });
-});
+router.get('/seleccionar-edificacion', fillReportControllers.seleccionarEdificacion);
 
-router.get('/seleccionar-edificacion-continuar', (request, response) => {
-    response.render('fill_report/seleccionar-edificacion-continuar', {
-        pageTitle: 'Seleccionar edificación',
-        selectTitle: 'continuar',
-        enlaceSiguiente: './continue-report',
-        regresar: './report-menu',
-        path: 'fill_report/seleccionar-edificacion-continuar'
-    });
-});
+router.get('/seleccionar-edificacion-continuar', fillReportControllers.seleccionarEdificacionContinuar);
 
-router.get('/summary-validation', (request, response) => {
-    response.render('fill_report/summary-validation', {
-        pageTitle: 'Resumen del reporte',
-        regresar: './validate-report',
-        aceptar: './finish-validation',
-        path: 'fill_report/summary-validation'
-    });
-});
+router.get('/summary-validation', fillReportControllers.validacionResumen);
 
-router.get('/finish-validation', (request, response) => {
-    response.render('fill_report/finish-validation', {
-        pageTitle: 'Validar dictamen',
-        tituloDictamen: 'preliminar',
-        dictamen: 'Dictamen',
-        path: 'fill_report/finish-validation'
-    });
-});
+router.get('/finish-validation', fillReportControllers.finalizarValidacion);
 
 
 module.exports = router;

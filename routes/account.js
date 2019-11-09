@@ -1,33 +1,14 @@
 const express = require('express');
+const accountControllers = require('../controllers/accountControllers');
 
 const router = express.Router();
 
-router.get('/account-menu', (request, response) => {
-    response.render('account/account-menu', {
-        pageTitle: 'Mi cuenta',
-        path: '/account/account-menu'
-    });
-});
+router.get('/account-menu', accountControllers.menuCuenta);
 
-router.get('/change-name', (request, response) => {
-    response.render('account/change-name', {
-        pageTitle: 'Cambiar nombre',
-        path: '/account/change-name'
-    });
-});
+router.get('/change-name', accountControllers.cambiarNombre);
 
-router.get('/change-email', (request, response) => {
-    response.render('account/change-email', {
-        pageTitle: 'Cambiar email',
-        path: '/account/change-email'
-    });
-});
+router.get('/change-email', accountControllers.cambiarCorreo);
 
-router.get('/change-password', (request, response) => {
-    response.render('account/change-password', {
-        pageTitle: 'Cambiar contraseña',
-        path: '/account/change-password'
-    });
-});
+router.get('/change-password', accountControllers.cambiarPassword);
 
 module.exports = router;

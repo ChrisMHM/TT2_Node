@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+
 // Importar rutas
 const rutasIndex = require('./routes/index');
 const rutasMain = require('./routes/main');
@@ -12,6 +13,11 @@ const rutasCuenta = require('./routes/account');
 const rutasImprimir = require('./routes/imprimir');
 
 const app = express();
+
+
+// Habilitar envío de datos de un form y tipo json
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 
 // Configura el template engine para generar archivos HTML dinámicos => ejs
 app.set('view engine', 'ejs');

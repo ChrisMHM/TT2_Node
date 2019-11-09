@@ -1,33 +1,14 @@
 const express = require('express');
+const registerControllers = require('../controllers/registerControllers');
 
 const router = express.Router();
 
-router.get('/register-completed', (request, response) => {
-    response.render('register/register-completed', {
-        pageTitle: 'Registro exitoso',
-        path: '/register/register-completed'
-    });
-});
+router.get('/register-completed', registerControllers.registroCompletado);
 
-router.get('/register-failed', (request, response) => {
-    response.render('register/register-failed', {
-        pageTitle: 'Registro fallido',
-        path: '/register/register-failed'
-    });
-});
+router.get('/register-failed', registerControllers.registroErroneo);
 
-router.get('/register-summary', (request, response) => {
-    response.render('register/register-summary', {
-        pageTitle: 'Resumen del registro',
-        path: '/register/register-summary'
-    });
-});
+router.get('/register-summary', registerControllers.resumenRegistro);
 
-router.get('/password', (request, response) => {
-    response.render('register/password', {
-        pageTitle: 'Recuperar contraseña',
-        path: '/register/password'
-    });
-});
+router.get('/password', registerControllers.password);
 
 module.exports = router;

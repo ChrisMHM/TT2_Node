@@ -1,11 +1,11 @@
 class DRO {
+    
     constructor(datos){
         this.datos = datos;
         this.errores = [];
     }
 
     // Getter
-
     getDatos() {
         return this.datos;
     }
@@ -15,7 +15,6 @@ class DRO {
     }
 
     // Setters
-
     setDatos(valor){
         this.datos = valor;
     }
@@ -46,8 +45,13 @@ class DRO {
         if (numeroDRO == ""){this.setErrores("Debes ingresar tu número de DRO.")}
     }
 
+    limpiar(){
+        console.log("Hola");
+    }
+
     registrar(){
         // Paso 1: validar los datos de usuario
+        this.limpiar();
         this.validar();
 
         // Paso 2: solo si no hay errores de validacion

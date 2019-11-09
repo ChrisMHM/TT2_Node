@@ -49,6 +49,9 @@ class DRO {
         console.log("Hola");
     }
 
+    funciona(){
+        
+    }
     registrar(){
         // Paso 1: validar los datos de usuario
         this.limpiar();

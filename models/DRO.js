@@ -46,6 +46,9 @@ class DRO {
         if (numeroDRO == ""){this.setErrores("Debes ingresar tu número de DRO.")}
     }
 
+    funciona(){
+        
+    }
     registrar(){
         // Paso 1: validar los datos de usuario
         this.validar();

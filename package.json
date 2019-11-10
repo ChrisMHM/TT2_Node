@@ -1,21 +1,22 @@
 {
-  "name": "tt2_node",
-  "version": "1.0.0",
-  "description": "TT2 Fissure Detector",
-  "main": "app.js",
-  "scripts": {
-    "start": "nodemon db"
-  },
-  "author": "Christian Hernández",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "ejs": "^2.7.1",
-    "express": "^4.17.1",
-    "mongodb": "^3.3.3",
-    "validator": "^12.0.0"
-  },
-  "devDependencies": {
-    "nodemon": "^1.19.4"
-  }
+    "name": "tt2_node",
+    "version": "1.0.0",
+    "description": "TT2 Fissure Detector",
+    "main": "app.js",
+    "scripts": {
+        "start": "nodemon db"
+    },
+    "author": "Christian Hernández",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "dotenv": "^8.2.0",
+        "ejs": "^2.7.1",
+        "express": "^4.17.1",
+        "mongodb": "^3.3.3",
+        "validator": "^12.0.0"
+    },
+    "devDependencies": {
+        "nodemon": "^1.19.4"
+    }
 }

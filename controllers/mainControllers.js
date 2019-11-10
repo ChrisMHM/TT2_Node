@@ -14,6 +14,15 @@ exports.login = (request, response) => {
     });
 };
 
+exports.loginPost = (request, response) => {
+    let dro = new DRO(request.body);
+    dro.login().then(resultado => {
+        response.send(resultado);
+    }).catch(error => {
+        response.send(error);
+    });
+};
+
 exports.registro = (request, response) => {
     response.render('main/registro', {
         pageTitle: 'Registro',

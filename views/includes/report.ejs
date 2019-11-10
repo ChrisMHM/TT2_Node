@@ -15,17 +15,17 @@
                 </div>
                 <div class="form-group col-md-3">
                     <label for="input-name">Ticket No.</label>
-                    <input name="nu" type="text" class="form-control" id="ticket-number"
+                    <input name="numTicket" type="text" class="form-control" id="ticket-number"
                            placeholder="Generado automáticamente" disabled>
                 </div>
                 <div class="form-group col-md-9">
                     <label for="input-name">Profesión</label>
-                    <input type="text" class="form-control" id="dro-degree" placeholder="Llenado automáticamente"
+                    <input name="profesion" type="text" class="form-control" id="dro-degree" placeholder="Llenado automáticamente"
                            disabled>
                 </div>
                 <div class="form-group col-md-3">
                     <label for="input-name">Fecha</label>
-                    <input type="text" class="form-control" id="date" placeholder="Llenado automáticamente"
+                    <input name="fecha" type="text" class="form-control" id="date" placeholder="Llenado automáticamente"
                            disabled>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                     <div class="form-group">
                         <label for="input-earthquake-zone">Zonificación propuesta de la ciudad para la
                             evaluación</label>
-                        <select id="input-earthquake-zone" class="form-control">
+                        <select name="zona" id="input-earthquake-zone" class="form-control">
                             <option disabled>Tipo de zona</option>
                             <option value="0">Zona I</option>
                             <option value="1">Zona II</option>
@@ -52,21 +52,21 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="input-street">Dirección</label>
-                        <input type="text" class="form-control" id="input-street"
+                        <input name="direccion" type="text" class="form-control" id="input-street"
                                placeholder="Llenado automáticamente" disabled>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="input-ngh">Colonia</label>
-                        <input type="text" class="form-control" id="input-ngh" placeholder="Llenado automáticamente"
+                        <input name="colonia" type="text" class="form-control" id="input-ngh" placeholder="Llenado automáticamente"
                                disabled>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="input-alcaldia">Alcaldía</label>
-                        <input type="text" class="form-control" id="input-alcaldia"
+                        <input name="colonia" type="text" class="form-control" id="input-alcaldia"
                                placeholder="Llenado automáticamente" disabled>
                     </div>
                 </div>
@@ -74,20 +74,20 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 form-group">
                         <div>
                             <label for="input-cp">CP</label>
-                            <input type="text" class="form-control" id="input-cp"
+                            <input name="zip" type="text" class="form-control" id="input-cp"
                                    placeholder="Llenado automáticamente" disabled>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12 form-group">
                         <div>
                             <label for="input-owner">Persona contactada</label>
-                            <input type="text" class="form-control" id="input-owner">
+                            <input name="responsable_edificio" type="text" class="form-control" id="input-owner">
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12 form-group">
                         <div>
                             <label for="input-owner-phone">Teléfono</label>
-                            <input type="text" class="form-control" id="input-owner-phone">
+                            <input name="telefono" type="text" class="form-control" id="input-owner-phone">
                         </div>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                 <div class="row col-12">
                     <div class="form-group comboBox col-md-6 col-sm-12">
                         <label for="usoInmueble">Uso del inmueble</label>
-                        <select class="form-control" id="usoInmueble">
+                        <select name="uso_inmueble" class="form-control" id="usoInmueble">
                             <option value="0" selected>Casa habitación</option>
                             <option value="1">Departamentos</option>
                             <option value="2">Comercios</option>
@@ -120,7 +120,7 @@
                     <div class="col-md-6 col-sm-12">
                         <label for="input-num-levels">Número de niveles sobre el terreno (incluyendo azotea y
                             mezanines): </label>
-                        <input type="number" min="0" value="0" class="form-control" id="input-num-levels">
+                        <input name="niveles" type="number" min="0" value="0" class="form-control" id="input-num-levels">
                     </div>
                 </div>
 
@@ -128,11 +128,11 @@
                 <div class="row col-12">
                     <div class="col-6">
                         <label for="input-sotanos">Número de sótanos: </label>
-                        <input type="number" min="0" max="67" value="0" class="form-control" id="input-sotanos">
+                        <input name="sotanos" type="number" min="0" max="67" value="0" class="form-control" id="input-sotanos">
                     </div>
                     <div class="col-6">
                         <label for="input-ocupantes">Número de ocupantes: </label>
-                        <input type="number" min="0" value="0" class="form-control" id="input-ocupantes">
+                        <input name="ocupantes" type="number" min="0" value="0" class="form-control" id="input-ocupantes">
                     </div>
                 </div>
             </div>
@@ -143,11 +143,11 @@
                 <h4>Tipo de inspección</h4>
                 <div class="col-12">
                     <div class="form-check form-check-inline">
-                        <input type="radio" name="tipoInspeccion" id="radio-exterior" value="option1" checked>
+                        <input name="inspeccion_ext" type="radio" name="tipoInspeccion" id="radio-exterior" value="option1" checked>
                         <label for="radio-exterior">Inspección exterior únicamente</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input type="radio" name="tipoInspeccion" id="radio-interior" value="option2">
+                        <input name="inspeccion_int" type="radio" name="tipoInspeccion" id="radio-interior" value="option2">
                         <label for="radio-interior">Inspección interior y exterior</label>
                     </div>
                 </div>
@@ -163,17 +163,17 @@
                             <div class="col-lg-6">Derrumbe total</div>
                             <div class="col-lg-6">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="derrumbeTotal"
+                                    <input name="derrumbe_total" class="form-check-input" type="radio" name="derrumbeTotal"
                                            id="siDerrumbeTotal" value="1">
                                     <label class="form-check-label" for="siDerrumbeTotal">Sí</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="derrumbeTotal"
+                                    <input name="derrumbe_total" class="form-check-input" type="radio" name="derrumbeTotal"
                                            id="noDerrumbeTotal" value="0">
                                     <label class="form-check-label" for="noDerrumbeTotal">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="derrumbeTotal"
+                                    <input name="derrumbe_total" class="form-check-input" type="radio" name="derrumbeTotal"
                                            id="dudasDerrumbeTotal" value="-1">
                                     <label class="form-check-label" for="dudasDerrumbeTotal">Existen dudas</label>
                                 </div>
@@ -185,17 +185,17 @@
                             <div class="col-lg-6 col-sm-12">Derrumbe parcial</div>
                             <div class="col-lg-6 col-sm-12">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="derrumbeParcial"
+                                    <input name="derrumbe_parcial" class="form-check-input" type="radio" name="derrumbeParcial"
                                            id="siDerrumbeParcial" value="1">
                                     <label class="form-check-label" for="siDerrumbeParcial">Sí</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="derrumbeParcial"
+                                    <input name="derrumbe_parcial" class="form-check-input" type="radio" name="derrumbeParcial"
                                            id="noDerrumbeParcial" value="0">
                                     <label class="form-check-label" for="noDerrumbeParcial">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="derrumbeParcial"
+                                    <input name="derrumbe_parcial" class="form-check-input" type="radio" name="derrumbeParcial"
                                            id="dudasDerrumbeParcial" value="-1">
                                     <label class="form-check-label" for="dudasDerrumbeParcial">Existen dudas</label>
                                 </div>
@@ -207,17 +207,17 @@
                             <div class="col-lg-6 col-sm-12">Edificación separada de su cimentación</div>
                             <div class="col-lg-6 col-sm-12">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="separacionCimentacion"
+                                    <input name="separacion" class="form-check-input" type="radio" name="separacionCimentacion"
                                            id="siSeparacionCimentacion" value="1">
                                     <label class="form-check-label" for="siSeparacionCimentacion">Sí</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="separacionCimentacion"
+                                    <input name="separacion" class="form-check-input" type="radio" name="separacionCimentacion"
                                            id="noSeparacionCimentacion" value="0">
                                     <label class="form-check-label" for="noSeparacionCimentacion">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="separacionCimentacion"
+                                    <input name="separacion" class="form-check-input" type="radio" name="separacionCimentacion"
                                            id="dudasSeparacionCimentacion" value="-1">
                                     <label class="form-check-label" for="dudasSeparacionCimentacion">Existen
                                         dudas</label>
@@ -230,17 +230,17 @@
                             <div class="col-lg-6 col-sm-12">Asentamiento diferencial o hundimiento</div>
                             <div class="col-lg-6 col-sm-12">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="asentamientoDiferencial"
+                                    <input name="hundimineto" class="form-check-input" type="radio" name="asentamientoDiferencial"
                                            id="siAsentamientoDiferencial" value="1">
                                     <label class="form-check-label" for="siAsentamientoDiferencial">Sí</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="asentamientoDiferencial"
+                                    <input name="hundimineto" class="form-check-input" type="radio" name="asentamientoDiferencial"
                                            id="noAsentamientoDiferencial" value="0">
                                     <label class="form-check-label" for="noAsentamientoDiferencial">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="asentamientoDiferencial"
+                                    <input name="hundimineto" class="form-check-input" type="radio" name="asentamientoDiferencial"
                                            id="dudasAsentamientoDiferencial" value="-1">
                                     <label class="form-check-label" for="dudasAsentamientoDiferencial">Existen
                                         dudas</label>
@@ -254,17 +254,17 @@
                                 entrepiso</div>
                             <div class="col-lg-6 col-sm-12">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inclinacion"
+                                    <input name="inclinacion" class="form-check-input" type="radio" name="inclinacion"
                                            id="siInclinacion" value="1">
                                     <label class="form-check-label" for="siInclinacion">Sí</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inclinacion"
+                                    <input name="inclinacion" class="form-check-input" type="radio" name="inclinacion"
                                            id="noInclinacion" value="0">
                                     <label class="form-check-label" for="noInclinacion">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inclinacion"
+                                    <input name="inclinacion" class="form-check-input" type="radio" name="inclinacion"
                                            id="dudasInclinacion" value="-1">
                                     <label class="form-check-label" for="dudasInclinacion">Existen dudas</label>
                                 </div>
@@ -277,17 +277,17 @@
                                 muros)</div>
                             <div class="col-lg-6 col-sm-12">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="dañosEstructurales"
+                                    <input name="daño_estructural" class="form-check-input" type="radio" name="dañosEstructurales"
                                            id="siDañosEstructurales" value="1">
                                     <label class="form-check-label" for="siDañosEstructurales">Sí</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="dañosEstructurales"
+                                    <input name="daño_estructural" class="form-check-input" type="radio" name="dañosEstructurales"
                                            id="noDañosEstructurales" value="0">
                                     <label class="form-check-label" for="noDañosEstructurales">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="dañosEstructurales"
+                                    <input name="daño_estructural" class="form-check-input" type="radio" name="dañosEstructurales"
                                            id="dudasDañosEstructurales" value="-1">
                                     <label class="form-check-label" for="dudasDañosEstructurales">Existen
                                         dudas</label>
@@ -300,17 +300,17 @@
                             <div class="col-lg-6 col-sm-12">Daños en elementos no estructurales</div>
                             <div class="col-lg-6 col-sm-12">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="dañosNoEstructurales"
+                                    <input name="daño_no_estructural" class="form-check-input" type="radio" name="dañosNoEstructurales"
                                            id="siDañosNoEstructurales" value="1">
                                     <label class="form-check-label" for="siDañosNoEstructurales">Sí</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="dañosNoEstructurales"
+                                    <input name="daño_no_estructural" class="form-check-input" type="radio" name="dañosNoEstructurales"
                                            id="noDañosNoEstructurales" value="0">
                                     <label class="form-check-label" for="noDañosNoEstructurales">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="dañosNoEstructurales"
+                                    <input name="daño_no_estructural" class="form-check-input" type="radio" name="dañosNoEstructurales"
                                            id="dudasDañosNoEstructurales" value="-1">
                                     <label class="form-check-label" for="dudasDañosNoEstructurales">Existen
                                         dudas</label>
@@ -323,17 +323,17 @@
                             <div class="col-lg-6 col-sm-12">Daños en instalaciones eléctricas</div>
                             <div class="col-lg-6 col-sm-12">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="dañosElectricos"
+                                    <input name="daño_electrico" class="form-check-input" type="radio" name="dañosElectricos"
                                            id="siDañosElectricos" value="1">
                                     <label class="form-check-label" for="siDañosElectricos">Sí</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="dañosElectricos"
+                                    <input name="daño_electrico" class="form-check-input" type="radio" name="dañosElectricos"
                                            id="noDañosElectricos" value="0">
                                     <label class="form-check-label" for="noDañosElectricos">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="dañosElectricos"
+                                    <input name="daño_electrico" class="form-check-input" type="radio" name="dañosElectricos"
                                            id="dudasDañosElectricos" value="-1">
                                     <label class="form-check-label" for="dudasDañosElectricos">Existen dudas</label>
                                 </div>
@@ -345,17 +345,17 @@
                             <div class="col-lg-6 col-sm-12">Daños en instalaciones hidrosanitarias</div>
                             <div class="col-lg-6 col-sm-12">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="dañosHidrosanitarias"
+                                    <input name="daño_hidrosanitario" class="form-check-input" type="radio" name="dañosHidrosanitarias"
                                            id="siDañosHidrosanitarias" value="1">
                                     <label class="form-check-label" for="siDañosHidrosanitarias">Sí</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="dañosHidrosanitarias"
+                                    <input name="daño_hidrosanitario" class="form-check-input" type="radio" name="dañosHidrosanitarias"
                                            id="noDañosHidrosanitarias" value="0">
                                     <label class="form-check-label" for="noDañosHidrosanitarias">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="dañosHidrosanitarias"
+                                    <input name="daño_hidrosanitario" class="form-check-input" type="radio" name="dañosHidrosanitarias"
                                            id="dudasDañosHidrosanitarias" value="-1">
                                     <label class="form-check-label" for="dudasDañosHidrosanitarias">Existen
                                         dudas</label>
@@ -368,17 +368,17 @@
                             <div class="col-lg-6 col-sm-12">Daños en instalaciones de gas</div>
                             <div class="col-lg-6 col-sm-12">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="dañosGas" id="siDañosGas"
+                                    <input name="daño_gas" class="form-check-input" type="radio" name="dañosGas" id="siDañosGas"
                                            value="1">
                                     <label class="form-check-label" for="siDañosGas">Sí</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="dañosGas" id="noDañosGas"
+                                    <input name="daño_gas"  class="form-check-input" type="radio" name="dañosGas" id="noDañosGas"
                                            value="0">
                                     <label class="form-check-label" for="noDañosGas">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="dañosGas" id="dudasDañosGas"
+                                    <input name="daño_gas"  class="form-check-input" type="radio" name="dañosGas" id="dudasDañosGas"
                                            value="-1">
                                     <label class="form-check-label" for="dudasDañosGas">Existen dudas</label>
                                 </div>
@@ -390,17 +390,17 @@
                             <div class="col-lg-6 col-sm-12">Grietas, movimiento del suelo</div>
                             <div class="col-lg-6 col-sm-12">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="grietasSuelo"
+                                    <input name="grieta_suelo"  class="form-check-input" type="radio" name="grietasSuelo"
                                            id="siGrietasSuelo" value="1">
                                     <label class="form-check-label" for="siGrietasSuelo">Sí</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="grietasSuelo"
+                                    <input name="grieta_suelo" class="form-check-input" type="radio" name="grietasSuelo"
                                            id="noGrietasSuelo" value="0">
                                     <label class="form-check-label" for="noGrietasSuelo">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="grietasSuelo"
+                                    <input name="grieta_suelo" class="form-check-input" type="radio" name="grietasSuelo"
                                            id="dudasGrietasSuelo" value="-1">
                                     <label class="form-check-label" for="dudasGrietasSuelo">Existen dudas</label>
                                 </div>
@@ -412,17 +412,17 @@
                             <div class="col-lg-6 col-sm-12">Deslizamiento de talud o corte</div>
                             <div class="col-lg-6 col-sm-12">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="deslizamientoTalud"
+                                    <input name="deslizamiento_talud" class="form-check-input" type="radio" name="deslizamientoTalud"
                                            id="siDeslizamientoTalud" value="1">
-                                    <label class="form-check-label" for="siDeslizamientoTalud">Sí</label>
+                                    <label name="deslizamiento_talud" class="form-check-label" for="siDeslizamientoTalud">Sí</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="deslizamientoTalud"
+                                    <input name="deslizamiento_talud" class="form-check-input" type="radio" name="deslizamientoTalud"
                                            id="noDeslizamientoTalud" value="0">
                                     <label class="form-check-label" for="noDeslizamientoTalud">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="deslizamientoTalud"
+                                    <input name="deslizamiento_talud" class="form-check-input" type="radio" name="deslizamientoTalud"
                                            id="dudasDeslizamientoTalud" value="-1">
                                     <label class="form-check-label" for="dudasDeslizamientoTalud">Existen
                                         dudas</label>
@@ -436,17 +436,17 @@
                             </div>
                             <div class="col-lg-6 col-sm-12">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="objetosPeligroCaer"
+                                    <input name="obj_peligro_caer" class="form-check-input" type="radio" name="objetosPeligroCaer"
                                            id="siObjetosPeligroCaer" value="1">
                                     <label class="form-check-label" for="siObjetosPeligroCaer">Sí</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="objetosPeligroCaer"
+                                    <input name="obj_peligro_caer" class="form-check-input" type="radio" name="objetosPeligroCaer"
                                            id="noObjetosPeligroCaer" value="0">
                                     <label class="form-check-label" for="noObjetosPeligroCaer">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="objetosPeligroCaer"
+                                    <input name="obj_peligro_caer" class="form-check-input" type="radio" name="objetosPeligroCaer"
                                            id="dudasObjetosPeligroCaer" value="-1">
                                     <label class="form-check-label" for="dudasObjetosPeligroCaer">Existen
                                         dudas</label>
@@ -461,17 +461,17 @@
                             </div>
                             <div class="col-lg-6 col-sm-12">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="otrosPeligros"
+                                    <input name="otros_peligros" class="form-check-input" type="radio" name="otrosPeligros"
                                            id="siOtrosPeligros" value="1">
                                     <label class="form-check-label" for="siOtrosPeligros">Sí</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="otrosPeligros"
+                                    <input name="otros_peligros" class="form-check-input" type="radio" name="otrosPeligros"
                                            id="noOtrosPeligros" value="0">
                                     <label class="form-check-label" for="noOtrosPeligros">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="otrosPeligros"
+                                    <input name="otros_peligros" class="form-check-input" type="radio" name="otrosPeligros"
                                            id="dudasOtrosPeligros" value="-1">
                                     <label class="form-check-label" for="dudasOtrosPeligros">Existen dudas</label>
                                 </div>

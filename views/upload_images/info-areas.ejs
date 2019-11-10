@@ -7,23 +7,23 @@
 <section class="form-container">
     <div class="container-fluid frame-form">
         <h2 class="titulo-area">Subir imágenes de las grietas y completar información</h2>
-        <form action="">
+        <form action="/upload_images/info-areas-post" method="POST">
             <h3>Área 1</h3>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="nombre-area-1">Nombre del área</span>
                 </div>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="nombre-area-1" placeholder="Área 1">
+                <input name="nombre_area" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="nombre-area-1" placeholder="Área 1">
             </div>
             <div class="row area container-fluid">
                 <div class="form-group col-lg-6">
                     <label for="file-chooser-1"><span class="datos-imagenes">Seleccionar imagen</span></label>
                     <label for="file-chooser-1" class="icon-style arrow"><i class="fas fa-arrow-up"></i></label>
-                    <input type="file" id="file-chooser-1" accept="image/png, image/jpeg" style="display: none;">
+                    <input name="imagen" type="file" id="file-chooser-1" accept="image/png, image/jpeg" style="display: none;">
                 </div>
                 <div class="form-group col-lg-6">
                     <label for="grietaEdificio">Tipo de elemento estructural horizontal</label>
-                    <select id="grietaEdificio" class="form-control">
+                    <select name= "tipo_elemento" id="grietaEdificio" class="form-control">
                         <option value="0" selected>Elegir</option>
                         <option value="1">Muro</option>
                         <option value="2">Pilar o columna</option>
@@ -37,7 +37,7 @@
             </div>
             <hr>
         </form>
-        <form action="">
+        <form action="/upload_images/info-areas-post" method="POST">
             <h3>Área 2</h3>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">

@@ -2,8 +2,8 @@ const dotenv = require('dotenv');
 dotenv.config()
 const mongodb = require('mongodb');
 
-mongodb.connect(process.env.CONNECTIONSTRING, {useNewUrlParser: true, useUnifiedTopology: true}, (error, cliente) => {
-    module.exports = cliente.db();
+mongodb.connect(process.env.CONNECTIONSTRING, {useNewUrlParser: true, useUnifiedTopology: true}, (error, client) => {
+    module.exports = client
     const app = require('./app');
     app.listen(process.env.PORT);
 });

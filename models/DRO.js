@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs');
-const droCollection = require('../db').collection('DRO');
+const droCollection = require('../db').db().collection('DRO');
 const validator = require('validator');
 
 class DRO {
@@ -151,8 +151,6 @@ class DRO {
         return new Promise((resolve, reject) => {
             this.limpiar();
             droCollection.findOne({ correo: this.getDatos().correo }).then((intentoDRO) => {
-                console.log("password login: " + this.getDatos().password);
-                console.log("password hash: " + intentoDRO.password);
                 if (intentoDRO && bcrypt.compareSync(this.getDatos().password, intentoDRO.password)) {
                     resolve("Felicidades!!")
                 } else {

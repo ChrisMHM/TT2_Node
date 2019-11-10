@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
+const MongoStore = require('connect-mongo')(session)
 
 // Importar rutas
 const rutasIndex = require('./routes/index');
@@ -17,6 +18,7 @@ const app = express();
 
 let sessionOptions = session({
     secret: 'Mensaje',
+    store: new MongoStore({client: require('./db')}),
     resave: false,
     saveUninitialized: false,
     cookie: {

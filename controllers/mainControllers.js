@@ -8,15 +8,21 @@ exports.about = (request, response) => {
 };
 
 exports.login = (request, response) => {
-    response.render('main/login', {
-        pageTitle: 'Ingresar',
-        path: '/main/login'
-    });
+    if (request.session.dro) {
+        response.send("Bienvenido a la aplicación");
+    } else {
+        response.render('main/login', {
+            pageTitle: 'Ingresar',
+            path: '/main/login'
+        });
+    }
+    
 };
 
 exports.loginPost = (request, response) => {
     let dro = new DRO(request.body);
     dro.login().then(resultado => {
+        request.session.dro = {correo: dro.getDatos().correo}
         response.send(resultado);
     }).catch(error => {
         response.send(error);

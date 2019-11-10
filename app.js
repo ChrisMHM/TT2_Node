@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const session = require('express-session');
 
 // Importar rutas
 const rutasIndex = require('./routes/index');
@@ -14,6 +15,17 @@ const rutasImprimir = require('./routes/imprimir');
 
 const app = express();
 
+let sessionOptions = session({
+    secret: 'Mensaje',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 24,
+        httpOnly: true
+    }
+});
+
+app.use(sessionOptions);
 
 // Habilitar envío de datos de un form y tipo json
 app.use(express.urlencoded({extended: false}));

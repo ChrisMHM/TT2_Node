@@ -1,3 +1,4 @@
+const bcrypt = require('bcryptjs');
 const droCollection = require('../db').collection('DRO');
 const validator = require('validator');
 
@@ -27,8 +28,8 @@ class DRO {
 
     // Setters
     setDatos(llave, nuevoDato) {
-        console.log(llave)
-        console.log(nuevoDato)
+        // console.log(llave)
+        // console.log(nuevoDato)
         this.datos[llave] = nuevoDato;
     }
 
@@ -103,7 +104,7 @@ class DRO {
         if (apellidoMa.length > 50) { this.setErrores("El apellido materno no puede exceder los 50 caracteres.") }
 
         if (password.length > 0 && password.length < 8) { this.setErrores("La contraseña debe de tener al menos 8 caracteres.") }
-        if (password.length > 100) { this.setErrores("La contraseña no puede exceder los 100 caracteres.") }
+        if (password.length > 50) { this.setErrores("La contraseña no puede exceder los 50 caracteres.") }
     }
 
     limpiar() {
@@ -139,7 +140,9 @@ class DRO {
         // entonces guardar los datos en la BD
         if (!this.getErrores().length) {
             this.asignarDro();
-            console.log(this.getDatos());
+            // console.log(this.getDatos());
+            let salt = bcrypt.genSaltSync(10);
+            this.getDatos().password = bcrypt.hashSync(this.getDatos().password, salt);
             droCollection.insertOne(this.datos);
         }
     }
@@ -147,8 +150,10 @@ class DRO {
     login() {
         return new Promise((resolve, reject) => {
             this.limpiar();
-            droCollection.findOne({ correo: this.getDatos().correo }).then(() => {
-                if (intentoDRO && intentoDRO.password == this.getDatos().password) {
+            droCollection.findOne({ correo: this.getDatos().correo }).then((intentoDRO) => {
+                console.log("password login: " + this.getDatos().password);
+                console.log("password hash: " + intentoDRO.password);
+                if (intentoDRO && bcrypt.compareSync(this.getDatos().password, intentoDRO.password)) {
                     resolve("Felicidades!!")
                 } else {
                     reject("Correo / contraseña invalido.");

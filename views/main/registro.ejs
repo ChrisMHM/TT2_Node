@@ -31,26 +31,21 @@
                         <label for="input-email">Correo</label>
                         <input name="correo" type="email" class="form-control" id="input-email" placeholder="Correo">
                     </div>
+                    <div class="form-group col-md-6 dropdown-form">
+                        <label for="input-num-dro">Número de DRO</label>
+                        <input name="numeroDRO" type="text" id="input-num-dro" maxlength="6" class="form-control" placeholder="Número de DRO">
+                    </div>
+                    <!--
                     <div class="form-group col-md-6">
                         <label for="input-cedula">Cédula profesional</label>
                         <input name="cedula" type="text" class="form-control" id="input-cedula" placeholder="Cédula profesional">
-                    </div>
+                    </div> -->
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="input-password1">Contraseña</label>
-                        <input name="password" type="password" class="form-control" id="input-password1" placeholder="Al menos 8 dígitos">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="input-password2">Repetir contraseña</label>
-                        <input name="repetirPassword" type="password" class="form-control" id="input-password2" placeholder="Repetir contraseña">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-4 dropdown-form">
+                    <div class="form-group col-md-12 dropdown-form">
                         <label for="input-dro">Tipo de DRO</label>
                         <select name="tipoDRO" id="input-dro" class="form-control">
-                            <option value="0" selected>Elegir</option>
+                            <option value="0" selected disabled>Elegir</option>
                             <option value="1">PREY</option>
                             <option value="2">DRO</option>
                             <option value="3">CSE</option>
@@ -59,6 +54,7 @@
                             <option value="6">CDUYA</option>
                         </select>
                     </div>
+                    <!--
                     <div class="form-group col-md-4 dropdown-form">
                         <label for="input-situation">Situación</label>
                         <select name="situacionDRO" id="input-situation" class="form-control">
@@ -69,12 +65,17 @@
                             <option value="4">Cancelado</option>
                             <option value="5">Finado</option>
                         </select>
+                    </div> -->
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="input-password1">Contraseña</label>
+                        <input name="password" type="password" class="form-control" id="input-password1" placeholder="Al menos 8 dígitos">
                     </div>
-                    <div class="form-group col-md-4 dropdown-form">
-                        <label for="input-num-dro">Número de DRO</label>
-                        <input name="numeroDRO" type="text" id="input-num-dro" maxlength="6" class="form-control">
+                    <div class="form-group col-md-6">
+                        <label for="input-password2">Repetir contraseña</label>
+                        <input name="repetirPassword" type="password" class="form-control" id="input-password2" placeholder="Repetir contraseña">
                     </div>
-
                 </div>
                 <div class="btn-container">
                     <button type="submit" class="btn btn-form">Registrar</button>

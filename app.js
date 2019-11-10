@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
-const MongoStore = require('connect-mongo')(session)
+const MongoStore = require('connect-mongo')(session);
 
 // Importar rutas
 const rutasIndex = require('./routes/index');

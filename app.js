@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+const flash = require('connect-flash');
 
 // Importar rutas
 const rutasIndex = require('./routes/index');
@@ -28,6 +29,7 @@ let sessionOptions = session({
 });
 
 app.use(sessionOptions);
+app.use(flash());
 
 // Habilitar envío de datos de un form y tipo json
 app.use(express.urlencoded({extended: false}));

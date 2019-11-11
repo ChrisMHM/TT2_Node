@@ -72,6 +72,7 @@ class DRO {
             })
             this.setDatos("nombres", objetoNombres);
         }
+        
         // if (!validator.isAlpha(nombres, 'es-ES')) { this.setErrores("Nombre: Solo se permiten letras.") }
 
         if (validator.isEmpty(apellidoPa)) { this.setErrores("Debe ingresar un apellido paterno.") }
@@ -152,7 +153,7 @@ class DRO {
             this.limpiar();
             droCollection.findOne({ correo: this.getDatos().correo }).then((intentoDRO) => {
                 if (intentoDRO && bcrypt.compareSync(this.getDatos().password, intentoDRO.password)) {
-                    resolve("Felicidades!!")
+                    resolve("Sesión iniciada");
                 } else {
                     reject("Correo / contraseña invalido.");
                 }

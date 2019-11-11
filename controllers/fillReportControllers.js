@@ -12,6 +12,10 @@ exports.formularioReporte = (request, response) => {
     });
 };
 
+exports.formularioReportePost = (request, response) => {
+    response.send('enviado');
+}
+
 exports.continuarReporte = (request, response) => {
     response.render('fill_report/continue-report', {
         pageTitle: 'Continuar llenado formulario',

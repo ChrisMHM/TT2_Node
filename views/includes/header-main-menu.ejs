@@ -39,7 +39,10 @@
                                 <div class="dropdown-menu">
                                     <!-- Dropdown menu links -->
                                     <a class="dropdown-item" href="#">Mi Cuenta</a>
-                                    <a class="dropdown-item" href="/">Cerrar sesión</a>
+                                    <form action="/main/salir" method="POST">
+                                        <button type="submit" class="btn btn-form">Cerrar sesión</button>
+                                        <!-- <a class="dropdown-item" href="/salir">Cerrar sesión</a> -->
+                                    </form>
                                 </div>
                             </div>
                         </div>

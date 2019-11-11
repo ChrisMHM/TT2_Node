@@ -1,4 +1,6 @@
 const DRO = require('../models/DRO');
+const mainMenuControllers = require('./mainMenuControllers');
+const registerControllers = require('./registerControllers');
 
 exports.about = (request, response) => {
     response.render('main/about', {
@@ -7,27 +9,37 @@ exports.about = (request, response) => {
     });
 };
 
+// Login
+
 exports.login = (request, response) => {
     if (request.session.dro) {
-        response.send("Bienvenido a la aplicación");
+        mainMenuControllers.menuPrincipal(request, response);
     } else {
         response.render('main/login', {
             pageTitle: 'Ingresar',
-            path: '/main/login'
+            path: '/main/login',
+            errores: request.flash('errores')
         });
     }
-    
 };
 
 exports.loginPost = (request, response) => {
     let dro = new DRO(request.body);
+
     dro.login().then(resultado => {
         request.session.dro = {correo: dro.getDatos().correo}
-        response.send(resultado);
+        request.session.save(() => {
+            response.redirect('/main/login');
+        });
     }).catch(error => {
-        response.send(error);
+        request.flash('errores', error);
+        request.session.save(() => {
+            response.redirect('/main/login');
+        });
     });
 };
+
+// Registro
 
 exports.registro = (request, response) => {
     response.render('main/registro', {
@@ -42,6 +54,6 @@ exports.registroPost = (request, response) => {
     if (dro.getErrores().length){
         response.send(dro.getErrores());
     } else {
-        response.send("Registro exitoso");
+        registerControllers.registroCompletado(request, response);
     }
 };

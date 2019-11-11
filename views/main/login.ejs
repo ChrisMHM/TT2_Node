@@ -7,6 +7,9 @@
 <!--Form section-->
 
 <section class="form-container">
+    <% errores.forEach((mensaje) => { %>
+        <div class="alert alert-danger text-center"><%= mensaje %></div>
+    <% }) %>
     <div class="container-fluid">
         <h2>Ingreso</h2>
         <br>

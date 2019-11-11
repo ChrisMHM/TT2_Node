@@ -6,6 +6,7 @@ const router = express.Router();
 router.get('/account-menu', accountControllers.menuCuenta);
 
 router.get('/change-name', accountControllers.cambiarNombre);
+router.post('/change-name-post', accountControllers.cambiarNombre);
 
 router.get('/change-email', accountControllers.cambiarCorreo);
 

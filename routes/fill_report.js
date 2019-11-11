@@ -5,6 +5,7 @@ const router = express.Router();
 router.get('/report-menu', fillReportControllers.menuReporte);
 
 router.get('/report-form', fillReportControllers.formularioReporte);
+router.post('/report-form-post', fillReportControllers.formularioReportePost);
 
 router.get('/continue-report', fillReportControllers.continuarReporte);
 

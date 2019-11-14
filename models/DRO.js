@@ -48,7 +48,7 @@ class DRO {
         this.setDatos("tipoDRO", this.tiposDRO[tipoDRO]);
     }
 
-    validar() {
+    async validar() {
         const nombres = this.getDatos().nombres;
         const apellidoPa = this.getDatos().apellidoPa;
         const apellidoMa = this.getDatos().apellidoMa;
@@ -60,7 +60,7 @@ class DRO {
         const numeroDRO = this.getDatos().numeroDRO;
         let arregloNombres = [];
 
-        if (validator.isEmpty(nombres)) { this.setErrores("Debe ingresar un nombre o nombres.") }
+        if (validator.isEmpty(nombres)) { this.setErrores("Nombre: Debe ingresar un nombre o nombres.") }
         else {
             arregloNombres = this.separarCadena(nombres);
             let objetoNombres = { nombreCompleto: nombres }
@@ -75,25 +75,25 @@ class DRO {
         
         // if (!validator.isAlpha(nombres, 'es-ES')) { this.setErrores("Nombre: Solo se permiten letras.") }
 
-        if (validator.isEmpty(apellidoPa)) { this.setErrores("Debe ingresar un apellido paterno.") }
-        if (!validator.isAlpha(apellidoPa, 'es-ES')) { this.setErrores("Solo se permiten letras.") }
+        if (validator.isEmpty(apellidoPa)) { this.setErrores("Apellido Paterno: debe ingresar un apellido paterno.") }
+        if (!validator.isAlpha(apellidoPa, 'es-ES')) { this.setErrores("Apellido Paterno: solo se permiten letras.") }
 
-        if (validator.isEmpty(apellidoMa)) { this.setErrores("Debe ingresar un apellido materno.") }
-        if (!validator.isAlpha(apellidoMa, 'es-ES')) { this.setErrores("Solo se permiten letras.") }
+        if (validator.isEmpty(apellidoMa)) { this.setErrores("Apellido Materno: debe ingresar un apellido materno.") }
+        if (!validator.isAlpha(apellidoMa, 'es-ES')) { this.setErrores("Apellido Materno: solo se permiten letras.") }
 
-        if (validator.isEmpty(correo)) { this.setErrores("Debe ingresar un correo válido.") }
-        if (!validator.isEmail(correo)) { this.setErrores("Solo se permiten letras.") }
+        if (validator.isEmpty(correo)) { this.setErrores("Correo: debe ingresar un correo válido.") }
+        if (!validator.isEmail(correo)) { this.setErrores("Correo: solo se permiten letras.") }
 
         // if (validator.isEmpty(cedula)){this.setErrores("Debe ingresar una cédula profesional.")}
         // if (!validator.isInt(cedula)){this.setErrores("Solo se permiten números.")}
 
-        if (validator.isEmpty(password)) { this.setErrores("Debe ingresar una contraseña.") }
-        if (validator.isEmpty(tipoDRO)) { this.setErrores("Debe ingresar un tipo de DRO.") }
+        if (validator.isEmpty(password)) { this.setErrores("Contraseña: debe ingresar una contraseña.") }
+        if (validator.isEmpty(tipoDRO)) { this.setErrores("Contraseña: debe ingresar un tipo de DRO.") }
 
         // if (validator.isEmpty(situacionDRO)){this.setErrores("Debe ingresar una situación actual.")}
 
-        if (validator.isEmpty(numeroDRO)) { this.setErrores("Debe ingresar un número de DRO.") }
-        if (!validator.isNumeric(numeroDRO)) { this.setErrores("Solo se permiten números.") }
+        if (validator.isEmpty(numeroDRO)) { this.setErrores("Número DRO: debe ingresar un número de DRO.") }
+        if (!validator.isNumeric(numeroDRO)) { this.setErrores("Número DRO: Solo se permiten números.") } 
 
         if (nombres.length > 0 && nombres.length < 2) { this.setErrores("El nombre debe de ser de más de un caracter.") }
         if (nombres.length > 50) { this.setErrores("El nombre no puede exceder los 50 caracteres.") }
@@ -106,6 +106,21 @@ class DRO {
 
         if (password.length > 0 && password.length < 8) { this.setErrores("La contraseña debe de tener al menos 8 caracteres.") }
         if (password.length > 50) { this.setErrores("La contraseña no puede exceder los 50 caracteres.") }
+
+        if (numeroDRO.length > 0 && numeroDRO.length < 6 && validator.isNumeric(numeroDRO)) {
+            let existeNumeroDRO = await droCollection.findOne({numeroDRO: this.getDatos().numeroDRO})
+            if (existeNumeroDRO) {
+                this.setErrores("El número de DRO ya existe");
+            }
+        }
+
+        if (validator.isEmail(correo)) {
+            let existeCorreo = await droCollection.findOne({correo: correo})
+            if (existeCorreo) {
+                this.setErrores("El correo ya existe");
+            }
+        }
+
     }
 
     limpiar() {
@@ -133,19 +148,24 @@ class DRO {
     }
 
     registrar() {
-        // Paso 1: validar los datos de usuario
-        this.limpiar();
-        this.validar();
-
-        // Paso 2: solo si no hay errores de validacion
-        // entonces guardar los datos en la BD
-        if (!this.getErrores().length) {
-            this.asignarDro();
-            // console.log(this.getDatos());
-            let salt = bcrypt.genSaltSync(10);
-            this.getDatos().password = bcrypt.hashSync(this.getDatos().password, salt);
-            droCollection.insertOne(this.datos);
-        }
+        return new Promise(async (resolve, reject) => {
+            // Paso 1: validar los datos de usuario
+            this.limpiar();
+            this.validar();
+    
+            // Paso 2: solo si no hay errores de validacion
+            // entonces guardar los datos en la BD
+            if (!this.getErrores().length) {
+                this.asignarDro();
+                // console.log(this.getDatos());
+                let salt = bcrypt.genSaltSync(10);
+                this.getDatos().password = bcrypt.hashSync(this.getDatos().password, salt);
+                await droCollection.insertOne(this.datos);
+                resolve();
+            } else {
+                reject(this.errors);
+            }
+        })
     }
 
     login() {

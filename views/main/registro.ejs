@@ -9,10 +9,18 @@
 
     <section class="form-container">
         <div class="container-fluid frame-form">
+            <% errores.forEach((mensaje) => { %>
+            <div class="alert alert-danger text-center"><%= mensaje %></div>
+            <% }) %>
             <h2>Registro</h2>
             <!-- Registro -->
             <div id="form-registro" class="container-fluid "><br>
                 <form action="/main/registro-post" method="POST">
+
+                    <% registroErrores.forEach((mensaje) => { %>
+                    <div class="alert alert-danger small"><%= mensaje %></div>
+                    <% }) %>
+
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="input-name">Nombre(s)</label>

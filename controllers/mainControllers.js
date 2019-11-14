@@ -9,7 +9,7 @@ exports.about = (request, response) => {
     });
 };
 
-// Login
+// GET
 
 exports.login = (request, response) => {
     if (request.session.dro) {
@@ -22,6 +22,17 @@ exports.login = (request, response) => {
         });
     }
 };
+
+exports.registro = (request, response) => {
+    response.render('main/registro', {
+        pageTitle: 'Registro',
+        path: '/main/registro',
+        registroErrores: request.flash('registroErrores'),
+        errores: request.flash('errores')
+    });
+};
+
+// POST
 
 exports.loginPost = (request, response) => {
     let dro = new DRO(request.body);
@@ -39,21 +50,20 @@ exports.loginPost = (request, response) => {
     });
 };
 
-// Registro
-
-exports.registro = (request, response) => {
-    response.render('main/registro', {
-        pageTitle: 'Registro',
-        path: '/main/registro'
-    });
-};
-
 exports.registroPost = (request, response) => {
     let dro = new DRO(request.body);
-    dro.registrar();
-    if (dro.getErrores().length){
-        response.send(dro.getErrores());
-    } else {
-        registerControllers.registroCompletado(request, response);
-    }
+    dro.registrar().then(() => {
+        request.session.dro = {correo: dro.getDatos().correo}
+        request.session.save(() => {
+            response.redirect('/main/registro');
+        });
+    }).catch(registroErrores => {
+        registroErrores.forEach((error) => {
+            request.flash('registroErrores', error);
+        });
+        request.session.save(() => {
+            response.redirect('/main/registro');
+        });
+    });
+    
 };

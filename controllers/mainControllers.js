@@ -1,6 +1,5 @@
 const DRO = require('../models/DRO');
 const mainMenuControllers = require('./mainMenuControllers');
-const registerControllers = require('./registerControllers');
 
 exports.about = (request, response) => {
     response.render('main/about', {
@@ -37,7 +36,7 @@ exports.registro = (request, response) => {
 exports.loginPost = (request, response) => {
     let dro = new DRO(request.body);
 
-    dro.login().then(resultado => {
+    dro.login().then(() => {
         request.session.dro = {correo: dro.getDatos().correo}
         request.session.save(() => {
             response.redirect('/main/login');
@@ -52,18 +51,22 @@ exports.loginPost = (request, response) => {
 
 exports.registroPost = (request, response) => {
     let dro = new DRO(request.body);
-    dro.registrar().then(() => {
-        request.session.dro = {correo: dro.getDatos().correo}
-        request.session.save(() => {
-            response.redirect('/main/registro');
-        });
-    }).catch(registroErrores => {
-        registroErrores.forEach((error) => {
-            request.flash('registroErrores', error);
-        });
-        request.session.save(() => {
-            response.redirect('/main/registro');
-        });
+    dro.registrar()
+        .then(() => {
+            request.session.dro = {
+                correo: dro.getDatos().correo
+            }
+            request.session.save(() => {
+                response.redirect('/main/registro');
+            });
+        })
+        .catch(registroErrores => {
+            registroErrores.forEach((error) => {
+                request.flash('registroErrores', error);
+            });
+            request.session.save(() => {
+                response.redirect('/main/registro');
+            });
     });
     
 };

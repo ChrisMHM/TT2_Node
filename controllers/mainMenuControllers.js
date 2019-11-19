@@ -9,7 +9,7 @@ exports.salir = (request, response) => {
 exports.menuPrincipal = (request, response) => {
     
     response.render('main_menu/main-menu', {
-        nombreDRO: request.session.dro.correo,
+        nombreDRO: request.session.dro.nombreDRO,
         pageTitle: 'Bienvenido',
         path: '/main_menu/main-menu'
     });

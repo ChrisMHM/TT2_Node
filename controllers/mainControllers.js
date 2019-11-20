@@ -1,6 +1,17 @@
 const DRO = require('../models/DRO');
 const mainMenuControllers = require('./mainMenuControllers');
 
+exports.ingresarPrimero = (request, response, next) => {
+    if (request.session.dro) {
+        next();
+    } else {
+        request.flash("errores", "Debes iniciar sesión primero");
+        request.session.save(() => {
+            response.redirect('/main/login');
+        });
+    }
+};
+
 exports.about = (request, response) => {
     response.render('main/about', {
         pageTitle: 'Acerca de',
@@ -37,7 +48,11 @@ exports.loginPost = (request, response) => {
     let dro = new DRO(request.body);
 
     dro.login().then(() => {
-        request.session.dro = {correo: dro.getDatos().correo}
+        request.session.dro = {
+            nombreDRO: dro.getDatos().nombres.nombreCompleto,
+            correo: dro.getDatos().correo
+        };
+
         request.session.save(() => {
             response.redirect('/main/login');
         });
@@ -55,7 +70,8 @@ exports.registroPost = (request, response) => {
         .then(() => {
             request.session.dro = {
                 correo: dro.getDatos().correo
-            }
+            };
+            request.flash('Registro completado');
             request.session.save(() => {
                 response.redirect('/main/registro');
             });
@@ -67,6 +83,6 @@ exports.registroPost = (request, response) => {
             request.session.save(() => {
                 response.redirect('/main/registro');
             });
-    });
-    
+        });
+
 };

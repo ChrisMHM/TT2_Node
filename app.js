@@ -19,7 +19,9 @@ const app = express();
 
 let sessionOptions = session({
     secret: 'Mensaje',
-    store: new MongoStore({client: require('./db')}),
+    store: new MongoStore({
+        client: require('./db')
+    }),
     resave: false,
     saveUninitialized: false,
     cookie: {

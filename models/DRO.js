@@ -3,6 +3,7 @@ const droCollection = require('../db').db().collection('DRO');
 const validator = require('validator');
 
 class DRO {
+
     constructor(datos) {
         this.datos = datos;
         this.errores = [];

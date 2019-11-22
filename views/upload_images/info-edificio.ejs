@@ -12,39 +12,55 @@
             <h3>Dirección de la edificación</h3>
             <div class="row">
                 <div class="form-group col-lg-12">
-                    <label for="inputAddress">Dirección</label>
-                    <input  name="direccion" type="text" class="form-control" id="inputAddress" placeholder="Calle y Número">
+                    <label for="inputAddress">Calle y número</label>
+                    <input  name="direccion" type="text" class="form-control" id="inputAddress" placeholder="Calle y Número" required>
                 </div>
                 <div class="form-group col-lg-6">
-                    <label for="colonia">Colonia</label>
-                    <input name="colonia" type="text" class="form-control" id="colonia" placeholder="Colonia">
+                    <label for="inputColonia">Colonia</label>
+                    <input name="colonia" type="text" class="form-control" id="inputColonia" placeholder="Colonia" required>
                 </div>
 
                 <div class="form-group col-lg-6">
-                    <label for="inputAddress2">Alcaldía</label>
-                    <input name="alcaldia" type="text" class="form-control" id="inputAddress2" placeholder="Alcaldia">
+                    <label for="inputAlcaldia">Uso del inmueble</label>
+                    <select name="uso_inmueble" id="inputAlcaldia" class="form-control" required>
+                        <option value="1" selected>Casa habitación</option>
+                        <option value="2">Oficinas privadas</option>
+                        <option value="3">Educación</option>
+                        <option value="4">Departamentos</option>
+                        <option value="5">Industrias</option>
+                        <option value="6">Recreativo</option>
+                        <option value="7">Comercios</option>
+                        <option value="8">Estacionamiento</option>
+                        <option value="9">Centro de reunión</option>
+                        <option value="10">Oficinas públicas</option>
+                        <option value="11">Bodegas</option>
+                        <option value="12"></option>
+                        <option value="13"></option>
+                        <option value="14"></option>
+                        <option value="15"></option>
+                        <option value="16"></option>
+                    </select>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-9">
-                    <label for="inputCity">Ciudad</label>
-                    <input name="ciudad" type="text" class="form-control" id="inputCity" placeholder="Ciudad">
+                    <label for="inputState">Estado</label>
+                    <input name="estado" type="text" class="form-control" id="inputState" value="Ciudad de México" disabled>
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputCP">Código Postal</label>
-                    <input name="zip" type="number" class="form-control" id="inputCP" placeholder="Código Postal">
+                    <input name="cp" type="number" minlength="5" maxlength="5" class="form-control" id="inputCP" placeholder="Código Postal" required>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-lg-6">
-                    <label for="input-num-areas">Número de áreas de la edificación a analizar</label>
-                    <input name="num_areas" type="number" min="1" value="1" class="form-control" id="input-num-areas">
+                    <label for="inputNumAreas">Número de áreas de la edificación a analizar</label>
+                    <input name="num_areas" type="number" min="1" value="1" class="form-control" id="inputNumAreas" required>
                 </div>
                 <div class="form-group col-lg-6">
-                    <label for="inputEdificacion">Uso del inmueble</label>
-                    <select name="uso_inmueble" id="inputEdificacion" class="form-control">
-                        <option value="0" selected>Elegir</option>
-                        <option value="1">Casa habitación</option>
+                    <label for="inputInmueble">Uso del inmueble</label>
+                    <select name="uso_inmueble" id="inputInmueble" class="form-control" required>
+                        <option value="1" selected>Casa habitación</option>
                         <option value="2">Oficinas privadas</option>
                         <option value="3">Educación</option>
                         <option value="4">Departamentos</option>
@@ -58,17 +74,16 @@
                     </select>
                 </div>
             </div>
-
+            <div class="row btn-container">
+                <div class="col-md-6 col-6">
+                    <a href="../main_menu/main-menu" class="btn btn-form">Regresar</a>
+                </div>
+                <div class="col-md-6 col-6">
+                    <!-- <a href="./info-areas" class="btn btn-form">Siguiente</a> -->
+                    <button type="submit" class="btn btn-form">Enviar</button>
+                </div>
+            </div>
         </form>
-
-        <div class="row btn-container">
-            <div class="col-md-6 col-6">
-                <a href="../main_menu/main-menu" class="btn btn-form">Regresar</a>
-            </div>
-            <div class="col-md-6 col-6">
-                <a href="./info-areas" class="btn btn-form">Siguiente</a>
-            </div>
-        </div>
         <!--        Fin form-->
     </div>
 </section>

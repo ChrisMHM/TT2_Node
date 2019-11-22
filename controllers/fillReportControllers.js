@@ -8,6 +8,9 @@ exports.menuReporte = (request, response) => {
 exports.formularioReporte = (request, response) => {
     response.render('fill_report/report-form', {
         pageTitle: 'Llenar formulario',
+        formTitle: 'Llenar Reporte',
+        salir: './report-menu',
+        enviar: './summary-form',
         path: 'fill_report/report-form'
     });
 };

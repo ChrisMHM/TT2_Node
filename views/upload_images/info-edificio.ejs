@@ -11,9 +11,13 @@
         <form action="/upload_images/info-edificio-post" method="POST">
             <h3>Dirección de la edificación</h3>
             <div class="row">
-                <div class="form-group col-lg-12">
-                    <label for="inputAddress">Calle y número</label>
-                    <input  name="direccion" type="text" class="form-control" id="inputAddress" placeholder="Calle y Número" required>
+                <div class="form-group col-md-9">
+                    <label for="inputCalle">Calle</label>
+                    <input  name="calle" type="text" class="form-control" id="inputCalle" placeholder="Calle" required>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="inputNumero">Número</label>
+                    <input name="numero" type="text" minlength="1" class="form-control" id="inputNumero" placeholder="Número" required>
                 </div>
                 <div class="form-group col-lg-6">
                     <label for="inputColonia">Colonia</label>
@@ -21,24 +25,24 @@
                 </div>
 
                 <div class="form-group col-lg-6">
-                    <label for="inputAlcaldia">Uso del inmueble</label>
-                    <select name="uso_inmueble" id="inputAlcaldia" class="form-control" required>
-                        <option value="1" selected>Casa habitación</option>
-                        <option value="2">Oficinas privadas</option>
-                        <option value="3">Educación</option>
-                        <option value="4">Departamentos</option>
-                        <option value="5">Industrias</option>
-                        <option value="6">Recreativo</option>
-                        <option value="7">Comercios</option>
-                        <option value="8">Estacionamiento</option>
-                        <option value="9">Centro de reunión</option>
-                        <option value="10">Oficinas públicas</option>
-                        <option value="11">Bodegas</option>
-                        <option value="12"></option>
-                        <option value="13"></option>
-                        <option value="14"></option>
-                        <option value="15"></option>
-                        <option value="16"></option>
+                    <label for="inputAlcaldia">Alcaldía</label>
+                    <select name="alcaldia" id="inputAlcaldia" class="form-control" required>
+                        <option value="1" selected>Azcapotzalco</option>
+                        <option value="2">Coyoacán</option>
+                        <option value="3">Cuajimalpa de Morelos</option>
+                        <option value="4">Gustavo A. Madero</option>
+                        <option value="5">Iztacalco</option>
+                        <option value="6">Magdalena Contreras</option>
+                        <option value="7">Iztapalapa</option>
+                        <option value="8">Milpa Alta</option>
+                        <option value="9">Álvaro Obregón</option>
+                        <option value="10">Tláhuac</option>
+                        <option value="11">Tlalpan</option>
+                        <option value="12">Xochimilco</option>
+                        <option value="13">Benito Juárez</option>
+                        <option value="14">Cuauhtémoc</option>
+                        <option value="15">Miguel Hidalgo</option>
+                        <option value="16">Venustiano Carranza</option>
                     </select>
                 </div>
             </div>
@@ -49,7 +53,7 @@
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputCP">Código Postal</label>
-                    <input name="cp" type="number" minlength="5" maxlength="5" class="form-control" id="inputCP" placeholder="Código Postal" required>
+                    <input name="cp" type="text" minlength="5" maxlength="5" class="form-control" id="inputCP" placeholder="Código Postal" required>
                 </div>
             </div>
             <div class="row">

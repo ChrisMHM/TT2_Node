@@ -127,10 +127,8 @@ class DRO {
         if (typeof (this.getDatos().apellidoPa) != "string") { this.getDatos().apellidoPa = "" }
         if (typeof (this.getDatos().apellidoMa) != "string") { this.getDatos().apellidoMa = "" }
         if (typeof (this.getDatos().correo) != "string") { this.getDatos().correo = "" }
-        // if (typeof(this.getDatos().cedula) != "string") {this.getDatos().cedula = ""}
         if (typeof (this.getDatos().password) != "string") { this.getDatos().password = "" }
         if (typeof (this.getDatos().tipoDRO) != "string") { this.getDatos().tipoDRO = "" }
-        // if (typeof(this.getDatos().situacionDRO) != "string") {this.getDatos().situacionDRO = ""}
         if (typeof (this.getDatos().numeroDRO) != "string") { this.getDatos().numeroDRO = "" }
 
         this.datos = {
@@ -138,10 +136,8 @@ class DRO {
             apellidoPa: this.datos.apellidoPa.trim().toLowerCase(),
             apellidoMa: this.datos.apellidoMa.trim().toLowerCase(),
             correo: this.datos.correo.trim().toLowerCase(),
-            // cedula : this.datos.cedula.trim().toLowerCase(),
             password: this.datos.password,
             tipoDRO: this.datos.tipoDRO,
-            // situacionDRO : this.datos.situacionDRO,
             numeroDRO: this.datos.numeroDRO.trim()
         }
     }
@@ -163,7 +159,7 @@ class DRO {
             } else {
                 reject(this.errores);
             }
-        })
+        });
     }
 
     login() {

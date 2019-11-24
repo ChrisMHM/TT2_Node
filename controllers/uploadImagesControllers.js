@@ -1,3 +1,5 @@
+const Direccion = require('../models/Direccion');
+
 exports.infoEdificio = (request, response) => {
     response.render('upload_images/info-edificio', {
         pageTitle: 'Analizar edificio',

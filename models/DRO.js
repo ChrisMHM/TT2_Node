@@ -70,8 +70,6 @@ class DRO {
                 this.setDatos("nombres", objetoNombres);
             }
             
-            // if (!validator.isAlpha(nombres, 'es-ES')) { this.setErrores("Nombre: Solo se permiten letras.") }
-    
             if (validator.isEmpty(apellidoPa)) { this.setErrores("Apellido Paterno: debe ingresar un apellido paterno.") }
             if (!validator.isAlpha(apellidoPa, 'es-ES')) { this.setErrores("Apellido Paterno: solo se permiten letras.") }
     
@@ -81,13 +79,8 @@ class DRO {
             if (validator.isEmpty(correo)) { this.setErrores("Correo: debe ingresar un correo válido.") }
             if (!validator.isEmail(correo)) { this.setErrores("Correo: solo se permiten letras.") }
     
-            // if (validator.isEmpty(cedula)){this.setErrores("Debe ingresar una cédula profesional.")}
-            // if (!validator.isInt(cedula)){this.setErrores("Solo se permiten números.")}
-    
             if (validator.isEmpty(password)) { this.setErrores("Contraseña: debe ingresar una contraseña.") }
             if (validator.isEmpty(tipoDRO)) { this.setErrores("Contraseña: debe ingresar un tipo de DRO.") }
-    
-            // if (validator.isEmpty(situacionDRO)){this.setErrores("Debe ingresar una situación actual.")}
     
             if (validator.isEmpty(numeroDRO)) { this.setErrores("Número DRO: debe ingresar un número de DRO.") }
             if (!validator.isNumeric(numeroDRO)) { this.setErrores("Número DRO: Solo se permiten números.") } 
@@ -165,13 +158,15 @@ class DRO {
     login() {
         return new Promise((resolve, reject) => {
             this.limpiar();
-            droCollection.findOne({ correo: this.getDatos().correo }).then((intentoDRO) => {
+            droCollection.findOne({ correo: this.getDatos().correo })
+            .then((intentoDRO) => {
                 if (intentoDRO && bcrypt.compareSync(this.getDatos().password, intentoDRO.password)) {
                     resolve("Sesión iniciada");
                 } else {
                     reject("Correo / contraseña invalido.");
                 }
-            }).catch(() => {
+            })
+            .catch(() => {
                 reject("Por favor, intenta de nuevo");
             });
         });

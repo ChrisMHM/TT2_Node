@@ -66,6 +66,7 @@ exports.loginPost = (request, response) => {
 
 exports.registroPost = (request, response) => {
     let dro = new DRO(request.body);
+
     dro.registrar()
         .then(() => {
             request.session.dro = {

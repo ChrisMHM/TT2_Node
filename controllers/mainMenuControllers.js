@@ -8,9 +8,22 @@ exports.salir = (request, response) => {
 }
 
 exports.menuPrincipal = (request, response) => {
-    response.render('main_menu/main-menu', {
-        nombreDRO: 'usuario',                       //Revisar cómo consultar la BD para sacar el nombre del usuario
-        pageTitle: 'Bienvenido',
-        path: '/main_menu/main-menu'
-    });
+    droCollection.findOne({})
+        .then(result => {
+            if(result) {
+                let nombre = result.nombres.nombre0;
+                nombre = nombre.charAt(0).toUpperCase() + nombre.slice(1)
+                // console.log(`Successfully found document: ${nombre}.`);
+                response.render('main_menu/main-menu', {
+                    nombreDRO: `${nombre}`,
+                    pageTitle: 'Bienvenido',
+                    path: '/main_menu/main-menu'
+                });
+              } else {
+                console.log("No document matches the provided query.");
+              }
+        })
+        .catch(error => {
+            console.error(`Failed to find document: ${err}`)
+        })
 };

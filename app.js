@@ -3,6 +3,7 @@ const path = require('path');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
+const multer = require('multer');
 
 // Importar rutas
 const rutasIndex = require('./routes/index');
@@ -30,11 +31,19 @@ let sessionOptions = session({
     }
 });
 
+// const fileStorage = multer.diskStorage({
+//     destination: (request, file, callback) => {
+
+//     },
+//     filename:
+// });
+
 app.use(sessionOptions);
 app.use(flash());
 
 // Habilitar envío de datos de un form y tipo json
 app.use(express.urlencoded({extended: false}));
+app.use(multer({dest: 'images'}).single('imagen'));
 app.use(express.json());
 
 // Configura el template engine para generar archivos HTML dinámicos => ejs

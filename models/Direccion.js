@@ -48,6 +48,17 @@ class Direccion {
         return this.errores;
     }
 
+    async getId(){
+        try {
+            const result = await direccionCollection.findOne({});
+            let id = result._id;
+            return id;
+        }
+        catch (error) {
+            return error;
+        }
+    }
+
     // Setters
     setDatos(llave, nuevoDato) {
         this.datos[llave] = nuevoDato;
@@ -71,11 +82,11 @@ class Direccion {
             calle: this.datos.calle.trim().toLowerCase(),
             numero: this.datos.numero.trim().toLowerCase(),
             colonia: this.datos.colonia.trim().toLowerCase(),
-            alcaldia: this.datos.alcaldia,
-            estado: this.datos.estado,
+            alcaldia: this.datos.alcaldia.trim().toLowerCase(),
+            estado: this.datos.estado.trim().toLowerCase(),
             cp: this.datos.cp.trim(),
             num_areas: this.datos.num_areas.trim(),
-            uso_inmueble: this.datos.uso_inmueble
+            uso_inmueble: this.datos.uso_inmueble.trim().toLowerCase()
         }
     }
 
@@ -91,19 +102,19 @@ class Direccion {
             const uso_inmueble = this.getDatos().uso_inmueble;
     
             if (validator.isEmpty(calle)) { this.setErrores("Calle: debe ingresar una calle.") }
-            if (!validator.isAlphanumeric(calle, 'es-ES')) { this.setErrores("Calle: solo se permiten letras.") }
+            // if (!validator.isAlphanumeric(calle, 'es-ES')) { this.setErrores("Calle: solo se permiten letras.") }
 
             if (validator.isEmpty(numero)) { this.setErrores("Código Postal: debe ingresar un CP.") }
             if (!validator.isNumeric(numero)) { this.setErrores("Código Postal: solo se permiten números.") }
             
             if (validator.isEmpty(colonia)) { this.setErrores("Colonia: debe ingresar una colonia.") }
-            if (!validator.isAlphanumeric(colonia, 'es-ES')) { this.setErrores("Colonia: solo se permiten letras y números.") }
+            // if (!validator.isAlphanumeric(colonia, 'es-ES')) { this.setErrores("Colonia: solo se permiten letras y números.") }
     
             if (validator.isEmpty(alcaldia)) { this.setErrores("Alcaldía: debe seleccionar una alcaldía.") }
             if (validator.isEmpty(estado)) { this.setErrores("Estado: debe ingresar un estado.") }
             
             if (validator.isEmpty(cp)) { this.setErrores("Código Postal: debe ingresar un CP.") }
-            if (!validator.isNumeric(cp)) { this.setErrores("Código Postal: solo se permiten números.") }
+            if (!validator.isNumeric(cp)) { this.setErrores("Código Postal: solo se permiten números. Si no tiene número ingresar 00000.") }
             
             if (validator.isEmpty(num_areas)) { this.setErrores("Número de áreas: debe ingresar un número de áreas a analizar.") }
             if (!validator.isNumeric(num_areas)) { this.setErrores("Número de áreas: solo se permiten números.") }
@@ -115,7 +126,7 @@ class Direccion {
             if (calle.length > 0 && calle.length < 4) { this.setErrores("La calle debe contener más de 2 caracteres.") }
             if (calle.length > 50) { this.setErrores("La calle no puede exceder los 50 caracteres.") }
 
-            if (numero.length > 0 && numero.length < 2) { this.setErrores("El número debe de ser de más de 2 caracteres.") }
+            if (numero.length > 0 && numero.length < 1) { this.setErrores("El número debe de ser de más de 1 caracteres.") }
             if (numero.length > 10) { this.setErrores("El número no puede exceder los 10 dígitos.") }
     
             if (colonia.length > 0 && colonia.length < 2) { this.setErrores("La colonia debe de ser de más de un caracter.") }
@@ -172,6 +183,7 @@ class Direccion {
                 this.asignarUsoInmueble();
                 
                 await direccionCollection.insertOne(this.datos);
+                
                 resolve();
             } else {
                 reject(this.errores);

@@ -11,5 +11,6 @@ router.get('/info-registro', uploadImagesControllers.infoRegistro);
 
 // POST
 router.post('/info-edificio-post', uploadImagesControllers.infoEdificioPost);
+router.post('/info-areas-post', uploadImagesControllers.infoAreasPost);
 
 module.exports = router;
